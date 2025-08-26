@@ -8,8 +8,8 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Jeffrey Bratman"
+site_theme               : "air" # Currently available options are "default", "air"
+title                    : "Portfolio"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
@@ -23,7 +23,7 @@ repository               : "jbratman/jbratman.github.io"
 author:
   # Biographic information
   avatar           : "Jeff_small.jpg"
-  name             : "Jeff"
+  name             : "Jeff Bratman"
   pronouns         : "He/Him"
   bio              : "Aerospace Engineer"
   location         : "San Diego, CA"
