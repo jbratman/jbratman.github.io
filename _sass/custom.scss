@@ -1,0 +1,7 @@
+/* === Custom Overrides === */
+.archive__item-teaser img {
+  width: 100%;      /* makes the image span the card */
+  height: 100px;    /* forces consistent height */
+  object-fit: cover; /* crops nicely without distortion */
+  display: block;   /* removes extra whitespace */
+}
