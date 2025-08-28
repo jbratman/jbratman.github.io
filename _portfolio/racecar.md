@@ -54,7 +54,7 @@ Chassis Tear Down and Initial Plan:
 </div>
 
 <div style="margin-bottom: 0px; font-size: 1.2em;">
-Installation of Body Shell:
+Installation of Front Lidar:
 </div>
 <div style="display: flex; align-items: center; gap: 10px;">
   <figure style="flex:1; text-align:center;">
@@ -72,7 +72,7 @@ Installation of Body Shell:
 </div>
 
 <div style="margin-bottom: 0px; font-size: 1.2em;">
-Installation of Body Shell:
+Installation of Body Shell and Completed Design:
 </div>
 <div style="display: flex; align-items: center; gap: 10px;">
   <figure style="flex:1; text-align:center;">
