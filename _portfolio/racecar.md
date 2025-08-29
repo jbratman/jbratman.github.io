@@ -1,6 +1,6 @@
 ---
 title: "1/10th Scale Autonomous Racecar Updates"
-date: 2025-08-20
+date: 25-08-20
 collection: portfolio
 tags: [ROS2, CAD, Python, Embedded]
 header:

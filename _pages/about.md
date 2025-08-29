@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me - Work In Progess"
+title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/

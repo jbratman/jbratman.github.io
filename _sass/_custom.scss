@@ -1,0 +1,63 @@
+/* === Custom Overrides === */
+
+/* Make each grid item equal-height cards */
+.grid__item { display: flex; }
+.archive__item { display: flex; flex-direction: column; }
+
+/* Uniform teaser */
+.archive__item-teaser { aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; }
+.archive__item-teaser img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Body as flex column */
+.archive__item-body { display: flex; flex-direction: column; flex: 1; }
+
+/* --- Normalize header rows so excerpts start at the same height --- */
+
+/* Title: allow up to two lines, reserve equal space */
+.archive__item-title {
+  min-height: 2.8rem;           /* ~2 lines at typical sizes */
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Meta row: keep date on one line, reserve equal space */
+.page__meta {
+  min-height: .5rem;           /* one line */
+  display: flex; align-items: center;
+}
+.page__meta time { white-space: normal; }   /* prevents line break before the year */
+.page__meta .page__meta-sep { display: none; } /* optional: remove extra spacing/seps */
+
+/* Excerpt (“Overview …”) */
+.archive__item-excerpt{
+  margin-top: .25rem;
+  /* no big min-height needed now; just keep cards tidy */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;  /* Chrome/Safari */
+  line-clamp: 6;          /* Standard */
+  overflow: hidden;
+}
+
+/* Optional: grid gap */
+.grid__wrapper { gap: 1.0em !important; }
+
+/* === NEW: compact meta row === */
+
+/* compact meta row on cards only */
+.archive__item .page__meta {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  flex-wrap: nowrap;
+}
+
+/* tighten just the date text, prevent wrapping */
+.archive__item .page__meta time { 
+  font-size: .25em; 
+  white-space: normal;
+}
+
+.lead-photo figure { margin: 0 0 1rem; }
+.lead-photo img { width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px; }
+.lead-photo figcaption { text-align: center; font-size: .9em; margin-top: .25rem; }
