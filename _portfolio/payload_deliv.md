@@ -5,6 +5,16 @@ collection: portfolio
 tags: [CAD, Python, MATLAB]
 header:
   teaser: delivery_plane/DSC_0420.jpg
+
+attachments:
+ - title: "Preliminary Design Review (FDR)"
+   pdf: /files/docs/payload_delivery/PDR_MJ5.pdf
+   pptx: /files/docs/payload_delivery/PDR_Presentation.pptx
+ - title: "Final Design Review (FDR)" 
+   pdf: /files/docs/payload_delivery/FDR_MJ5.pdf
+   pptx: /files/docs/payload_delivery/FDR_Presentation.pptx
+
+ 
 ---
 ## Overview
 This was my senior design project, where I worked with a team of 5 other aerospace engineering seniors. Our task was to design from the ground up a radio controlled plane, that could carry two separate payloads. One a weight based payload and the other volume based. Where the volume based payload would then be dropped while in flight. 
@@ -103,6 +113,39 @@ J(x) =
 
 ### Detail Design & Fabrication
 
+## Reports and Presentations
+{% if page.attachments and page.attachments.size > 0 %}
+<div class="doc-grid">
+{% for d in page.attachments %}
+  <div class="doc-card">
+    <h4>{{ d.title }}</h4>
+  
+    <p class="doc-actions">
+      {% if d.pdf %}
+        <a class="btn doc-btn"
+           href="{{ d.pdf | relative_url }}"
+           target="_blank" rel="noopener">View PDF</a>
+      {% endif %}
+
+       {% if d.pptx %}
+        <a class="btn doc-btn"
+          href="{{ d.pptx | relative_url }}"
+          target="_blank" rel="noopener">Download PPTX</a>
+        {% if jekyll.environment == "production" %}
+          <a class="btn doc-btn"
+            href="https://view.officeapps.live.com/op/view.aspx?src={{ d.pptx | absolute_url | uri_escape }}"
+            target="_blank" rel="noopener">Open PPTX Online</a>
+        {% endif %}
+      {% endif %}
+  </p>
+  </div>
+{% endfor %}
+</div>
+{% else %}
+<p><em>No documents uploaded yet.</em></p>
+{% endif %}
+
+
 ## Gallery
 
 ### Flight Videos
@@ -116,4 +159,5 @@ J(x) =
     allowfullscreen>
   </iframe>
 </div>
+
 ### Images

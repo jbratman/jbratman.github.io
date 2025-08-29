@@ -61,3 +61,68 @@
 .lead-photo figure { margin: 0 0 1rem; }
 .lead-photo img { width: 100%; max-height: 100%; object-fit: cover; border-radius: 10px; }
 .lead-photo figcaption { text-align: center; font-size: .9em; margin-top: .25rem; }
+
+/* =======================================================================
+   Portfolio → Reports & Presentations (attachments)
+   Styles the documents grid/cards/buttons rendered from `page.attachments`
+   Targets: .doc-grid, .doc-card, .doc-actions, .doc-btn, .doc-embed
+   ======================================================================= */
+
+/* Layout: grid of document cards */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin: .5rem 0 1rem;
+}
+
+/* Card container */
+.doc-card {
+  background: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center; /* center title text */
+}
+
+/* Button row (center buttons stacked vertically) */
+.doc-card .doc-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  margin-top: .25rem;
+}
+
+/* Default button spacing (kept for other contexts) */
+.doc-actions .btn { margin: 0 .5rem .5rem 0; }
+
+/* Unified button style (OUTLINE) */
+.doc-card .doc-actions .btn.doc-btn {
+  background: transparent;
+  color: var(--link-color, #2a7ae2) !important;
+  border: 2px solid var(--link-color, #2a7ae2);
+  min-width: 11rem;
+  text-align: center;
+  margin: 0; /* override the generic margin above */
+}
+.doc-card .doc-actions .btn.doc-btn:hover {
+  background: var(--link-color, #2a7ae2);
+  color: #fff !important;
+  text-decoration: none;
+}
+
+/* Optional: inline PDF preview container (unused if previews removed) */
+.doc-embed { height: 520px; margin-top: .5rem; }
+.doc-embed embed,
+.doc-embed iframe { width: 100%; height: 100%; border: 0; border-radius: 8px; }
+
+/* --- If you prefer SOLID buttons instead of outline, replace the block above with:
+.doc-card .doc-actions .btn.doc-btn {
+  background: var(--link-color, #2a7ae2);
+  color: #fff !important;
+  border: 1px solid var(--link-color, #2a7ae2);
+  min-width: 11rem; text-align:center; margin:0;
+}
+.doc-card .doc-actions .btn.doc-btn:hover { filter: brightness(0.92); text-decoration:none; }
+*/
