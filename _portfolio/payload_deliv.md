@@ -109,7 +109,143 @@ J(x) =
 
 ### Conceptual Design
 
+<div class="concept">
+
+  <!-- Design objective -->
+  <div class="concept__sub">
+    <p class="subhead">Design objective &amp; score</p>
+    <p>Maximize flight score based on payload revenue, energy &amp; operating costs, and time:</p>
+
+    <div class="eq-box">
+      <div class="eq">
+\[
+J(x) =
+\frac{ r_{W_p}\, W_p(x) + r_{V_p}\, V_p(x) - c_e\, E_f(x) - c_c }{ T_f(x) }
+\;-\;
+\frac{ c_{W_g}\, W_g(x) }{ t_l }
+\;-\; c_f
+\]
+      </div>
+    </div>
+
+    - Fixed parameters used: $r_{W_p}=1,\ r_{V_p}=300,\ c_e=0.3,\ c_c=0.5,\ c_{W_g}=300,\ c_f=0.2,\ t_l=1000$.
+  </div>
+
+  <!-- Key assumptions -->
+  <div class="concept__sub">
+    <p class="subhead">Key assumptions &amp; early sizing.</p>
+
+    <ul class="assumptions">
+      <li>Glide ratio:
+        <div class="assumption-value">$L/D \approx 8{-}13$</div>
+      </li>
+
+      <li>Electric battery specific energy:
+        <div class="assumption-value">$4.53\times10^{5}\ \mathrm{J/kg}$</div>
+        <div class="assumption-note">(from $11.1\,\mathrm{V},\ 1.8\,\mathrm{Ah},\ 0.1588\,\mathrm{kg}$)</div>
+      </li>
+
+      <li>Initial gross weight target:
+        <div class="assumption-value">$\approx 2\ \mathrm{kg}$</div>
+        <div class="assumption-note">Wing loading: $\approx 2.05\ \mathrm{lb/ft}^2$</div>
+      </li>
+
+      <li>Competition constraints:
+        <div class="assumption-value">$W_p \ge 0.5\ \mathrm{lb},\quad V_p \ge 500\ \mathrm{cm}^3$</div>
+      </li>
+
+      <li>Working goals:
+        <div class="assumption-value">$W_p = 1.5\ \mathrm{lb},\quad V_p = 0.5\ \mathrm{L}$ (min)</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Architecture -->
+  <div class="concept__sub">
+    <p class="subhead">Architecture &amp; materials.</p>
+    <ul>
+      <li>High-wing with dihedral for stability; simple planform for manufacturability.</li>
+      <li>Structure: balsa wing, plywood fuselage; control surfaces from dense foam.</li>
+      <li>5-servo layout: 2× aileron, 1× elevator, 1× rudder/nose-wheel, 1× drop mechanism.</li>
+      <li>Weight payload near CG; volume payload released via single 9 g servo.</li>
+    </ul>
+  </div>
+
+  <!-- Scoring insights -->
+  <div class="concept__sub">
+    <p class="subhead">Scoring strategy insights.</p>
+    <ul>
+      <li>Energy cost per mission is small (≈ $0.12$), so <strong>reducing flight time</strong> (higher cruise speed) boosts score materially.</li>
+      <li>Adequate wing loading for low takeoff/landing speeds; empty-weight fraction target $0.5\text{–}0.7$.</li>
+    </ul>
+  </div>
+
+  <!-- Electronics -->
+  <div class="concept__sub">
+    <p class="subhead">Fixed electronics &amp; selected components.</p>
+    <ul>
+      <li>Cobra C-2217/16 (Kv 1180) motor, 40 A ESC, 3S 1800 mAh LiPo, FrSky X8R, SG90 servos, standard linkages &amp; hardware.</li>
+    </ul>
+  </div>
+
+</div>
+
 ### Preliminary Design
+
+<div class="concept">
+
+  <!-- Propulsion -->
+  <div class="concept__sub">
+    <p class="subhead">Propulsion &amp; propeller choice.</p>
+    <ul>
+      <li>Motor constraint: Cobra C2217/16, 11.1 V, Kv = 1180 → no-load speed ≈ <strong>13,098 RPM</strong>; usable band <strong>6,500–10,500 RPM</strong>.</li>
+      <li>APC <strong>8×6-E</strong> vs <strong>9×6-E</strong>: the 8×6-E is slightly more efficient, but cruise thrust needed ≈ <strong>3 N</strong>.
+        At <strong>9,000 RPM</strong> the <strong>9×6-E</strong> makes ≈ <strong>3.75 N</strong> while the 8×6-E makes ≈ <strong>2.66 N</strong>.</li>
+      <li><strong>Selected propeller: APC 9×6-E</strong> (meets cruise-thrust with margin at realistic RPM).</li>
+    </ul>
+  </div>
+
+  <!-- Airfoil -->
+  <div class="concept__sub">
+    <p class="subhead">Airfoil &amp; aerodynamic model.</p>
+    <ul>
+      <li>Analysis at $Re \approx 5\times10^{5}$; constraints: $t/c \le 12\%$ (servo fit), camber $\le 6\%$ (manufacturability/stability).</li>
+      <li>Candidates: Clark-Y, NACA 4415/0012/4412/2412 → <strong>NACA 4412</strong> chosen for higher L/D in the operating range.</li>
+      <li>2-D refs: $C_{L,\max}\approx1.52$, $C_{d,\min}\approx0.007$, $C_m\approx-0.10$ at low $\alpha$.</li>
+      <li>3-D correction gives $C_{L,\max}\approx1.36$ at $\alpha\approx13.25^\circ$ (spanwise correction from assignment method).</li>
+    </ul>
+  </div>
+
+  <!-- Performance -->
+  <div class="concept__sub">
+    <p class="subhead">Performance estimates (Initial).</p>
+    <ul>
+      <li>Takeoff model ($\mu_\text{roll}=0.03$): ground run $S_G \approx \,18\ \text{m}$; stall speed $V_\text{stall}\approx11\ \text{m/s}$.</li>
+      <li>Thrust-required vs. cruise speed: thrust at nominal cruise ≈ <strong>3 N</strong>; available thrust ~<strong>10 N</strong> → $V_{\max}\approx45\ \text{m/s}$.</li>
+      <li>Wing-loading carpet: optimum around <strong>100 N/m²</strong> for the sizing assumptions used.</li>
+    </ul>
+  </div>
+
+  <!-- Geometry -->
+  <div class="concept__sub">
+    <p class="subhead">Baseline geometry (working values).</p>
+    <ul>
+      <li>Wing area $S\approx0.23\ \text{m}^2$, span $b\approx1.15\ \text{m}$, chord $c\approx0.20\ \text{m}$ (basis for Re &amp; perf calcs).</li>
+    </ul>
+  </div>
+
+  <!-- Rationale -->
+  <div class="concept__sub">
+    <p class="subhead">Rationale.</p>
+    <p class="mb-0">
+      The prop choice prioritizes meeting cruise-thrust with margin in the 50–80 % RPM band,
+      while NACA 4412 offers strong L/D and gentle stall at your Reynolds number—both consistent
+      with minimizing flight time while keeping takeoff distance short.
+    </p>
+  </div>
+
+
+</div>
 
 ### Detail Design & Fabrication
 

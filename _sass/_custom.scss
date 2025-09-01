@@ -126,3 +126,35 @@
 }
 .doc-card .doc-actions .btn.doc-btn:hover { filter: brightness(0.92); text-decoration:none; }
 */
+
+
+.assumptions { margin: .5rem 0 1rem; padding-left: 1.1rem; }
+.assumptions li { margin-bottom: .6rem; }
+
+/* centered value line */
+.assumption-value {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  margin: .15rem 0 .35rem;
+}
+
+/* optional centered note under a value */
+.assumption-note {
+  text-align: center;
+  color: #666;
+  font-size: .95em;
+  margin: -.2rem 0 .35rem;
+}
+/* Conceptual Design section indentation */
+.concept { margin-top: .25rem; }
+.concept__sub { margin-left: 1.25rem; }
+@media (min-width: 768px) {
+  .concept__sub { margin-left: 1.5rem; }
+}
+
+/* Subsection headings inside Conceptual Design */
+.concept .subhead {
+  font-weight: 700;
+  margin: .25rem 0 .35rem;
+}
