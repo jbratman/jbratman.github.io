@@ -13,6 +13,8 @@ attachments:
  - title: "Final Design Review (FDR)" 
    pdf: /files/docs/payload_delivery/FDR_MJ5.pdf
    pptx: /files/docs/payload_delivery/FDR_Presentation.pptx
+ - title: "Senior Day Poster"
+   pdf: /files/docs/payload_delivery/Team_3_MJ5_Poster_colored_fixedlogo.pdf   
 
  
 ---
@@ -248,6 +250,122 @@ J(x) =
 </div>
 
 ### Detail Design & Fabrication
+
+<div class="concept">
+
+  <div class="concept__sub">
+    <p class="subhead">Payload architecture</p>
+    <ul>
+      <li><strong>Payload 1 (weights):</strong> plywood mount with removable slides; velcro retention; calibrated up to competition max</li>
+      <li><strong>Payload 2 (volume):</strong> 3D-printed bomb-bay with dual micro-servos and a <em>four-bar linkage</em> for ~90° door opening</li>
+      <li>Return springs preload doors to closed; linkage geometry biased to self-lock near closed to reduce idle servo load</li>
+    </ul>
+<h3 id="bay-door-design">Bay Door Design</h3>
+
+<figure>
+  <!-- Static CAD image -->
+  <img src="/images/delivery_plane/Delivery_Assembly_CAD.jpg"
+       alt="Bomb-bay four-bar linkage CAD">
+
+  <!-- Animated GIF (scaled down with CSS or width attribute) -->
+  <img src="/images/delivery_plane/fourbar_animation.gif"
+       alt="Four-bar linkage animation showing door motion"
+       class="media-img small-gif">
+
+  <!-- Video 1 -->
+  <video autoplay muted loop playsinline class="media-video">
+    <source src="/videos/delivery_plane/20250521_174541.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <figcaption>
+    Four-bar door geometry—quick open at small servo rotation, stable closure at neutral.
+  </figcaption>
+</figure>
+  </div>
+
+  <div class="concept__sub">
+    <p class="subhead">Airframe &amp; controls</p>
+    <ul>
+      <li><strong>Wing:</strong> balsa ribs with ply center section; semi-monocoque leading edge; 3° dihedral</li>
+      <li><strong>Ailerons:</strong> span ~40% of wing, chord ~20% of local; ±30° travel</li>
+      <li><strong>Fuselage:</strong> 2 mm ply primary structure; wing hooks + carbon tubes with rubber-band retention</li>
+      <li><strong>Empennage:</strong> foam-core V-stab with CF spar + balsa/monokote; balsa H-stab</li>
+      <li><strong>Taildragger gear:</strong> main gear bent for higher rotation; tailwheel on 3D-printed pivot aligned to rudder hinge (single-servo steering)</li>
+      <li><strong>Pushrods:</strong> routed in plastic guide tubes to prevent interference and reduce column buckling</li>
+    </ul>
+  </div>
+
+  <div class="concept__sub">
+    <p class="subhead">Propulsion &amp; alignment</p>
+    <ul>
+      <li>3D-printed thrust-line shim: **~+2° right, ~+3° down**; plywood standoff shifts motor ~15 mm forward for CG</li>
+      <li>Avionics bay: Cobra C-2217/16, 40 A ESC, inline watt-meter, 3S 1800 mAh LiPo, FrSky X8R</li>
+    </ul>
+    <div class="inline-figs">
+      <img src="/images/delivery_plane/motor_extension_and_shim.jpg" alt="Motor thrust-line shim">
+    </div>
+    <figcaption>
+    Angled motor mount shim and motor extension 
+    </figcaption>
+  </div>
+
+  <div class="concept__sub">
+    <p class="subhead">Fabrication notes</p>
+    <ul>
+      <li>Printed parts: nose cone, spinner, thrust-line shim, tailwheel pivot, bomb-bay frame/doors</li>
+      <li>Covering: monokote on wing/empennage; quick field repairable</li>
+      <li>Assembly tips:
+        <ul>
+          <li>Dry-fit bomb-bay module and doors before covering to verify clearances</li>
+          <li>Tune horn radius/link length to avoid end-point binding at ±30° throws</li>
+          <li>Set spring preload so doors close without holding torque</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="concept__sub">
+    <p class="subhead">Specs (as-flown)</p>
+    <table class="params">
+      <thead><tr><th>Item</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Empty / Gross</td><td>~1.4 kg / ~2.125 kg</td></tr>
+        <tr><td>Payload 1 (weights)</td><td>~0.68 kg</td></tr>
+        <tr><td>Payload 2 (volume)</td><td>~700 cm³</td></tr>
+        <tr><td>Thrust-to-weight</td><td>~0.5</td></tr>
+        <tr><td>Cruise speed</td><td>~20 m/s</td></tr>
+        <tr><td>CG (empty / P1+P2)</td><td>~24.7% / ~24.0% MAC</td></tr>
+        <tr><td>Neutral point / SM</td><td>~58% MAC / ~17%</td></tr>
+        <tr><td>Stall / Takeoff / Climb</td><td>~10–11 m/s / ~15 m / ~15°</td></tr>
+        <tr><td>Airfoils</td><td>NACA 4412 (wing), NACA 0012 (empennage)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="concept__sub">
+    <p class="subhead">Test Flight &amp; Results</p>
+    <ul>
+      <li>Nose cone was removed due to imbalance caused</li>
+      <li>Initial flight test revealed that the tail was to heavy and moved Center of Gravity from the ideal 25-33% of chord to 60% of the chord</li>
+      <li>Payload Delivery system was unable to be tested during initial test flight due to servo mount failure</li>
+      <li>Motor vibrations caused mounting hardware to back out, causing the motor to fall out of the aircraft. Luckily this happened during landing and pilot was able to glide for safe landing.</li>
+      <li>Rubber-band wing retention works great with properly backed hooks and CF tubes</li>
+    </ul>
+  </div>
+
+  <div class="concept__sub">
+    <p class="subhead">Lessons learned</p>
+    <ul>
+      <li>Rebuild tail assembly to be lighter weight. Done by changing from foam elevators and rudder to balsa wood semi-monocoque</li>
+      <li>Extended motor further out from fusealage to help counter the tail weight. Mount extension also had space for more weight to be added to assist further</li>
+      <li>Motor mounting hardware was secured utilizing LOCTITE threadlocker</li>
+      <li>Delivery system mount was rebuilt with updated mounts that were stronger and less prone to breakage</li>
+
+    </ul>
+  </div>
+
+</div>
 
 ## Reports and Presentations
 {% if page.attachments and page.attachments.size > 0 %}
