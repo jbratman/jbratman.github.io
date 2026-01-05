@@ -19,7 +19,19 @@ attachments:
  
 ---
 ## Overview
-This was my senior design project, where I worked with a team of 5 other aerospace engineering seniors. Our task was to design from the ground up a radio controlled plane, that could carry two separate payloads. One a weight based payload and the other volume based. Where the volume based payload would then be dropped while in flight. 
+- **System:** Fixed-wing RC payload delivery aircraft (senior capstone)
+- **Role:** Co-lead mechanical design, payload mechanism, fabrication, flight testing
+- **Team:** 6 aerospace engineering seniors (UC San Diego)
+- **Tools:** Fusion 360, MATLAB, Python, rapid prototyping
+- **Outcome:** Fully built and flight-tested aircraft with successful in-flight payload deployment
+
+I led the mechanical design and integration of the payload delivery system, including a gear-driven four-bar linkage bomb bay designed for reliable in-flight deployment. I was also responsible for detailed CAD, fabrication of structural components, system integration, and hands-on flight testing and iteration.
+
+## Key Results
+- Successfully designed, built, and flight-tested a payload delivery aircraft
+- Achieved reliable in-flight payload deployment after mechanical iteration
+- Validated four-bar linkage bomb bay concept through bench and flight testing
+- Identified and corrected stability and vibration issues through test-driven redesign
 
 <div class="lead-photo">
   <figure>
@@ -28,7 +40,12 @@ This was my senior design project, where I worked with a team of 5 other aerospa
   </figure>
 </div>
 
-
+## My Primary Engineering Responsibilities
+- Designed the payload bay architecture and four-bar door linkage
+- Modeled linkage kinematics and servo loading for reliable actuation
+- Designed and fabricated structural components for the fuselage and payload system
+- Led mechanical integration of servos, linkages, and avionics
+- Participated in ground testing, flight testing, and post-flight iteration
 
 ## Design Constraints and Competition Rules
 - Design, build, and successfully fly an aircraft that results in the highest possible flight score utilizing the given flight score
@@ -346,11 +363,11 @@ J(x) =
   <div class="concept__sub">
     <p class="subhead">Test Flight &amp; Results</p>
     <ul>
-      <li>Nose cone was removed due to imbalance caused</li>
-      <li>Initial flight test revealed that the tail was to heavy and moved Center of Gravity from the ideal 25-33% of chord to 60% of the chord</li>
-      <li>Payload Delivery system was unable to be tested during initial test flight due to servo mount failure</li>
-      <li>Motor vibrations caused mounting hardware to back out, causing the motor to fall out of the aircraft. Luckily this happened during landing and pilot was able to glide for safe landing.</li>
-      <li>Rubber-band wing retention works great with properly backed hooks and CF tubes</li>
+      <li>Initial flight revealed nose cone mass imbalance, leading to its removal to restore stability </li>
+      <li>Early configuration exhibited an aft center of gravity (~60% chord), prompting tail mass reduction and forward motor relocation to return CG to the 25–33% chord range.</li>
+      <li>Payload delivery system could not be evaluated during the first flight due to a servo mount failure, informing a redesigned and reinforced mounting approach.</li>
+      <li>Motor vibrations during early testing caused fasteners to back out, resulting in motor detachment during landing; hardware was subsequently secured using threadlocker.</li>
+      <li>Rubber-band wing retention system performed reliably under flight loads when properly backed by carbon-fiber tubes.</li>
     </ul>
   </div>
 
