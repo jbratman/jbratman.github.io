@@ -3,19 +3,25 @@ title: "1/10th Scale Autonomous Racecar Updates"
 date: 25-08-20
 collection: portfolio
 tags: [ROS2, CAD, Python, Embedded]
+excerpt: |
+  **Overview**
+  - **System:** 1/10th-scale autonomous racecar hardware integration and sensor packaging update
+  - **Role:** Mechanical design lead for sensor mounting, chassis integration, and serviceability improvements
+  - **Tools:** CAD, 3D printing, ROS2-compatible sensors, rapid prototyping
+  - **Outcome:** Improved sensor placement, durability, and serviceability while transitioning the vehicle from a research robot to an autonomous racecar form factor 
+
 header:
   teaser: 1_10th_racecar/01_Jack_Robot_v6.jpg
 ---
 
 ## Overview
-This project focused on developing modular sensor mounts and integration of body shell for a 1/10th-scale autonomous racecar.  
-The system was designed to be adaptable across vehicle setups while reducing downtime during testing.
+- **System:** 1/10th-scale autonomous racecar hardware integration and sensor packaging update
+- **Role:** Mechanical design lead for sensor mounting, chassis integration, and serviceability improvements
+- **Tools:** CAD, 3D printing, ROS2-compatible sensors, rapid prototyping
+- **Outcome:** Improved sensor placement, durability, and serviceability while transitioning the vehicle from a research robot to an autonomous racecar form factor
 
-## Features
-- Designed modular CAD + 3D-printed sensor mounts
-- Improved serviceability and reduced downtime during races
 
-## Design Constraints
+## Problem & Constraints
 - Utilize current sensor package on vehicle
 - Integrate secondary Livox Mid-360 lidar into front area of vehicle
 - Maintain top lidar and GPS antenna position
@@ -23,7 +29,26 @@ The system was designed to be adaptable across vehicle setups while reducing dow
 - Maintain strength and endurance from impacts
 - Improve serviceability  
 
-## Development
+## Build, Test, Iterate
+This work focused on repackaging sensors and compute hardware to transition the vehicle from a research-oriented robotic platform into an autonomous racecar that could accept standard RC car bodies. Design changes prioritized compact packaging, durability, and serviceability while preserving sensor performance and enabling realistic racecar aesthetics.
+
+## My Contributions
+I led the mechanical redesign and hardware repackaging effort to transition the platform from a research-oriented robotic vehicle into an autonomous racecar capable of accepting standard RC car bodies.
+
+My contributions included:
+- Served as the primary CAD designer for sensor mounts, compute packaging, and chassis integration
+- Repackaged perception and compute hardware to reduce external protrusions and improve form factor
+- Enabled compatibility with off-the-shelf RC car bodies while preserving sensor fields of view
+- Designed mounts to improve durability and serviceability under racing conditions
+- Supported system integration and testing to validate mechanical robustness and repeatability
+
+## Key Results
+- Successfully transitioned the platform from a research-oriented robotic vehicle to an autonomous racecar capable of accepting standard RC car bodies
+- Improved packaging and reduced external protrusions, enabling realistic vehicle aesthetics and improved protection of sensors and compute hardware
+- Maintained sensor performance and field-of-view while integrating components within a constrained chassis envelope
+- Improved durability and serviceability, reducing setup and repair time between testing sessions
+- Enabled future aerodynamic and body-fit experimentation by standardizing mounting locations and form factor
+
 <div style="margin-bottom: 0px; font-size: 1.2em;">
   Initial Starting Point:
 </div>
