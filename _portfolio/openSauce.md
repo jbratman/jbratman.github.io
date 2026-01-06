@@ -3,21 +3,51 @@ title: "OpenSauce 2025"
 date: 2025-07-19
 collection: portfolio
 tags: [ROS2, CAD, Python, Embedded]
+excerpt: |
+  **Overview**
+  - **System:** Low-cost autonomous RC racecar developed for live demonstration at OpenSauce 2025
+  - **Role:** Primary system integrator responsible for CAD design, hardware integration, autonomy setup, and on-site demo execution
+  - **Tools:** ROS2, Python, CAD, Raspberry Pi 5, global shutter camera, embedded motor control
+  - **Outcome:** Delivered a reliable, repeatable autonomous racecar demo that operated live on the show floor and engaged attendees in hands-on autonomy concepts
+
 header:
   teaser: openSauce/AWS_Chassis_Electrical_Mounting_Plate.jpg
 ---
 
 ## Overview
-Built an autonomous racecar demo for OpenSauce so attendees could experience self-driving racing tech.
+- **System:** Low-cost autonomous RC racecar developed for live demonstration at OpenSauce 2025
+- **Role:** Primary system integrator responsible for CAD design, hardware integration, autonomy setup, and on-site demo execution
+- **Tools:** ROS2, Python, CAD, Raspberry Pi 5, global shutter camera, embedded motor control
+- **Outcome:** Delivered a reliable, repeatable autonomous racecar demo that operated live on the show floor and engaged attendees in hands-on autonomy concepts
 
-## Design Constraints
-- Develop a sub 500$ autonomous racecar
-- Utilize Raspberry Pi 5 and Global Shutter Pi camera
-- Needs to be compact enough to fit in 16'x 16' area and travel via plane
-- Easily Servicable as to minimize downtime for demo 
-- Be able to show how the AI model was being implemented
+## Problem & Constraints
+- Develop a sub-$500 autonomous racecar platform
+- Utilize Raspberry Pi 5 and a global shutter camera
+- Fit within a 16 ft × 16 ft demo area and be transportable by air
+- Maintain high serviceability to minimize demo downtime
+- Visually demonstrate how an AI model was implemented and trained
 
-## Development
+
+## Build, Test, Iterate
+This project followed an iterative build–test–refine workflow to ensure the system was reliable, serviceable, and repeatable for a live public demonstration environment. Design decisions prioritized robustness, rapid troubleshooting, and consistent autonomous behavior over maximum performance.
+
+## My Contributions
+I served as the primary integrator for the OpenSauce 2025 autonomous racecar demo, responsible for bringing together hardware, software, and mechanical design into a reliable live demonstration system.
+
+My contributions included:
+- Designed and maintained the overall system architecture for the autonomous demo
+- Served as the primary CAD designer for the chassis layout, sensor mounts, and hardware packaging
+- Integrated perception, control, and actuation into a single ROS2-based autonomy stack
+- Implemented the primary vehicle control and autonomy logic used during the live demo
+- Led system-level debugging, validation, and iteration to ensure consistent operation on the show floor
+- Executed on-site setup, troubleshooting, and live operation during the OpenSauce event
+
+## Key Results
+- Successfully delivered a fully autonomous RC racecar demo operating live on the OpenSauce 2025 show floor
+- Demonstrated repeatable autonomous driving behavior within a constrained 16 ft × 16 ft demo area
+- Achieved reliable perception and control using a Raspberry Pi 5 and global shutter camera under variable lighting conditions
+- Maintained high system uptime through rapid on-site troubleshooting and serviceable hardware design
+- Effectively communicated autonomy concepts to attendees through visible sensing, control, and behavior execution
 
 ### Initial Starting Point
 <p class="section-sub">
@@ -77,9 +107,3 @@ Built an autonomous racecar demo for OpenSauce so attendees could experience sel
     allowfullscreen>
   </iframe>
 </div>
-
-## Summary of Work
-- Developed a low cost entery level autonomous racecar, utilizing used chassis, Rasberry Pi 5, Global Shutter Pi cam, and PMW servo motor driver.
-- Successfully built a working AI model to drive around track enough to take attendee's data and build on top, in order to showcase how they trained the AI to drive. 
-- Maintained cost contraints, retained serviceability, and durability with CAD design.
-- Conformed to small form factor restrictions. 
