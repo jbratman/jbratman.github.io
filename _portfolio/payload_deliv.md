@@ -3,6 +3,13 @@ title: "Payload Delivery Plane (Col. Pollo J. Rosso) "
 date: 2025-06-15
 collection: portfolio
 tags: [CAD, Python, MATLAB]
+excerpt: |
+  **Overview**
+  - **System:** Team-based autonomous systems project developed for ECEMAE 148
+  - **Role:** Team member contributing to system integration, implementation, and testing
+  - **Tools:** ROS2, Python, C++, Git, embedded sensors and compute hardware
+  - **Outcome:** Demonstrated a functional autonomous system with documented architecture, testing results, and final presentation
+  
 header:
   teaser: delivery_plane/DSC_0420.jpg
 

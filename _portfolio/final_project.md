@@ -3,19 +3,24 @@ title: "ECE/MAE 148 Final Project (Team 7)"
 date: 2024-12-06
 collection: portfolio
 tags: [Autonomy, Robotics, Controls, Perception, Systems]
+excerpt: |
+  **Overview**
+  - **System:** Team-based autonomous systems project developed for ECEMAE 148
+  - **Role:** Team member contributing to system integration, implementation, and testing
+  - **Tools:** ROS2, Python, C++, Git, embedded sensors and compute hardware
+  - **Outcome:** Demonstrated a functional autonomous system with documented architecture, testing results, and final presentation
+
 header:
-  teaser: ecemae148/teaser.jpg
+  teaser: 148_final_project/complete_car.jpg
 ---
 
 ## Overview
 - **System:** Team-based autonomous systems project developed for ECEMAE 148
 - **Role:** Team member contributing to system integration, implementation, and testing
 - **Tools:** ROS2, Python, C++, Git, embedded sensors and compute hardware
-- **Focus Areas:** Perception, autonomy logic, and system-level integration
 - **Outcome:** Demonstrated a functional autonomous system with documented architecture, testing results, and final presentation
 
 ## Problem Statement
-
 The objective of this project was to design and demonstrate an autonomous robotic system capable of detecting, tracking, and interacting with humans using onboard perception and decision logic. The system needed to reliably identify people, respond to visual identification cues, and execute distinct behaviors based on validated versus invalid inputs, all in real time.
 
 The project emphasized perception-driven autonomy, sensor fusion, and state-based decision making under real-world constraints such as limited compute, sensor noise, and system latency.

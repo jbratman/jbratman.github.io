@@ -3,6 +3,13 @@ title: "Triton AI Autonomous Go-Kart"
 date: 2025-6-15
 collection: portfolio
 tags: [CAD, MATLAB]
+excerpt: |
+  **Overview**
+  - **System:** Autonomous go-kart platform for student racing autonomy
+  - **Role:** Mechanical Lead
+  - **Tools:** CAD, MATLAB, rapid prototyping
+  - **Outcome:** Designed and tested mechanical subsystems supporting autonomy development and on-track validation
+
 header:
   teaser: go_kart/1750071646128.jpg
 ---
