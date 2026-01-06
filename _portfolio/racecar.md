@@ -113,10 +113,3 @@ Installation of Body Shell and Completed Design:
     <figcaption>Final CAD design with all componets place </figcaption>
   </figure>
 </div>
-
-## Summary of Work
-- Considered initial design constraints,and was presented the current state of development. Weaknesses of the current design and strengths.
-- Realized that initial CAD model did not meet design requirements.
-- Tested idea of moving front lidar infront of front suspension system
-- Developed cut template for modifying body shell, so that new shells could be easily updated
-- Updated component mounts to centeralize in order to minimize risk of damage in side collision 
