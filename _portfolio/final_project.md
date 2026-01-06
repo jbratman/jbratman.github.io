@@ -11,7 +11,7 @@ excerpt: |
   - **Outcome:** Demonstrated a functional autonomous system with documented architecture, testing results, and final presentation
 
 header:
-  teaser: 148_final_project/complete_car.jpg
+  teaser: 148_final_project/complete_car.JPG
 ---
 
 ## Overview
