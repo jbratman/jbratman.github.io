@@ -2,7 +2,13 @@ services:
   jekyll-site:
     image: jekyll-site
     build: .
-    volumes: [ .:/usr/src/app ]
-    ports: [ 4000:4000 ]
+    volumes:
+      - .:/usr/src/app
+      - bundle_cache:/usr/local/bundle
+    ports:
+      - 4000:4000
     user: 1000:1000
-    command: jekyll serve -H 0.0.0.0 -w
+    command: sh -lc "bundle install && bundle exec jekyll build --config _config.yml,_config_local.yml --watch & ruby -run -e httpd _site -p 4000 -b 0.0.0.0"
+
+volumes:
+  bundle_cache:
