@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<article class="case-study-container">
+
+  <header class="project-hero">
+    {% if page.hero_image %}
+    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }} hero image" class="project-hero__image">
+    {% endif %}
+    <div class="project-hero__overlay"></div>
+    <div class="project-hero__content">
+      <p class="project-kicker">{{ page.project_type }}</p>
+      <h1 class="project-title">{{ page.title }}</h1>
+      <p class="project-subtitle">{{ page.one_line_description }}</p>
+    </div>
+  </header>
+
+  <div class="project-grid-layout">
+
+    <main class="project-body">
+
+      {% if page.summary %}
+      <section class="project-section">
+        <h2>Project Overview</h2>
+        <p class="lead-text">{{ page.summary }}</p>
+      </section>
+      {% endif %}
+
+      {% if page.challenge_statement %}
+      <section class="project-section">
+        <h2>Challenge</h2>
+        <p>{{ page.challenge_statement }}</p>
+      </section>
+      {% endif %}
+
+      {% if page.requirements %}
+      <section class="project-section">
+        <h2>Requirements & Constraints</h2>
+        <div class="requirements-grid">
+          {% for req in page.requirements %}
+          <div class="requirement-card">
+            <span class="requirement-label">{{ req.label }}</span>
+            <span class="requirement-value">{{ req.value }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      <section class="project-section markdown-content">
+        {{ content }}
+      </section>
+
+    </main>
+
+    <aside class="project-sidebar">
+      <div class="project-sidebar-card">
+        <h3>Quick Facts</h3>
+
+        {% if page.role %}
+        <div class="meta-item">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">{{ page.role }}</span>
+        </div>
+        {% endif %}
+
+        {% if page.timeline %}
+        <div class="meta-item">
+          <span class="meta-label">Timeline</span>
+          <span class="meta-value">{{ page.timeline }}</span>
+        </div>
+        {% endif %}
+
+        {% if page.team %}
+        <div class="meta-item">
+          <span class="meta-label">Team</span>
+          <span class="meta-value">{{ page.team }}</span>
+        </div>
+        {% endif %}
+
+        {% if page.tools %}
+        <div class="meta-item">
+          <span class="meta-label">Tools</span>
+          <span class="meta-value">{{ page.tools | join: ", " }}</span>
+        </div>
+        {% endif %}
+
+        {% if page.report_url %}
+        <a href="{{ page.report_url | relative_url }}" class="btn-download" download>
+          Technical Report
+        </a>
+        {% endif %}
+      </div>
+    </aside>
+
+  </div>
+</article>

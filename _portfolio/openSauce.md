@@ -3,15 +3,32 @@ title: "OpenSauce 2025"
 date: 2025-07-19
 collection: portfolio
 tags: [ROS2, CAD, Python, Embedded]
+
 excerpt: |
   **Overview**
   - **System:** Low-cost autonomous RC racecar developed for live demonstration at OpenSauce 2025
-  - **Role:** Primary system integrator responsible for CAD design, hardware integration, autonomy setup, and on-site demo execution
+  - **Role:** Primary system integrator responsible for CAD design, hardware integration, autonomy setup, and on-site demonstration
   - **Tools:** ROS2, Python, CAD, Raspberry Pi 5, global shutter camera, embedded motor control
-  - **Outcome:** Delivered a reliable, repeatable autonomous racecar demo that operated live on the show floor and engaged attendees in hands-on autonomy concepts
+  - **Outcome:** Delivered a reliable autonomous racecar demonstration that continuously operated for attendees throughout OpenSauce 2025
 
 header:
   teaser: openSauce/AWS_Chassis_Electrical_Mounting_Plate.jpg
+
+featured: true
+order: 3
+
+card_category: "Public Demonstration"
+
+card_image: /images/openSauce/AWS_Chassis_Electrical_Mounting_Plate.jpg
+
+card_summary: >
+  Designed, built, and demonstrated a live autonomous RC racecar demonstration at OpenSauce 2025.
+
+card_tags:
+  - Robotics
+  - ROS2
+  - Embedded
+  - Public Demo
 ---
 
 ## Overview

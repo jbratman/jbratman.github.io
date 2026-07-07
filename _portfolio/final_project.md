@@ -3,15 +3,32 @@ title: "ECE/MAE 148 Final Project (Team 7)"
 date: 2024-12-06
 collection: portfolio
 tags: [Autonomy, Robotics, Controls, Perception, Systems]
+
 excerpt: |
   **Overview**
-  - **System:** Team-based autonomous systems project developed for ECEMAE 148
-  - **Role:** Team member contributing to system integration, implementation, and testing
+  - **System:** Team-based autonomous ground vehicle developed for ECE/MAE 148
+  - **Role:** Team member responsible for system integration, implementation, and testing
   - **Tools:** ROS2, Python, C++, Git, embedded sensors and compute hardware
-  - **Outcome:** Demonstrated a functional autonomous system with documented architecture, testing results, and final presentation
+  - **Outcome:** Delivered a fully functional autonomous vehicle that successfully completed course objectives and established the foundation for future development
 
 header:
   teaser: 148_final_project/complete_car.JPG
+
+featured: true
+order: 5
+
+card_category: "Autonomous Systems"
+
+card_image: /images/148_final_project/complete_car.JPG
+
+card_summary: >
+  Integrated an autonomous vehicle using ROS2 and embedded systems.
+
+card_tags:
+  - ROS2
+  - Robotics
+  - Systems Integration
+  - Controls
 ---
 
 ## Overview

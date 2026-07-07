@@ -1,17 +1,34 @@
 ---
-title: "Triton AI Autonomous Go-Kart"
-date: 2025-6-15
+title: "Autonomous Go-Kart"
+date: 2025-06-15
 collection: portfolio
-tags: [CAD, MATLAB]
+tags: [CAD, MATLAB, Python, Mechanical Design, Autonomous Systems]
+
 excerpt: |
   **Overview**
-  - **System:** Autonomous go-kart platform for student racing autonomy
-  - **Role:** Mechanical Lead
-  - **Tools:** CAD, MATLAB, rapid prototyping
-  - **Outcome:** Designed and tested mechanical subsystems supporting autonomy development and on-track validation
+  - **System:** Autonomous electric go-kart developed for Formula-style autonomous racing
+  - **Role:** Mechanical Lead responsible for subsystem design, packaging, integration, and testing
+  - **Tools:** CAD, MATLAB, Python, rapid prototyping, fabrication
+  - **Outcome:** Designed, integrated, and validated mechanical systems supporting autonomous vehicle development and track testing
 
 header:
   teaser: go_kart/1750071646128.jpg
+
+featured: true
+order: 2
+
+card_category: "Mechanical Integration"
+
+card_image: /images/go_kart/1750071646128.jpg
+
+card_summary: >
+  Led the mechanical development of Triton AI's autonomous go-kart.
+
+card_tags:
+  - Mechanical Design
+  - Systems Integration
+  - Autonomy
+  
 ---
 
 ## Overview

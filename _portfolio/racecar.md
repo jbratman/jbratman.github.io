@@ -1,17 +1,34 @@
 ---
 title: "1/10th Scale Autonomous Racecar Updates"
-date: 25-08-20
+date: 2025-08-20
 collection: portfolio
 tags: [ROS2, CAD, Python, Embedded]
+
 excerpt: |
   **Overview**
   - **System:** 1/10th-scale autonomous racecar hardware integration and sensor packaging update
   - **Role:** Mechanical design lead for sensor mounting, chassis integration, and serviceability improvements
   - **Tools:** CAD, 3D printing, ROS2-compatible sensors, rapid prototyping
-  - **Outcome:** Improved sensor placement, durability, and serviceability while transitioning the vehicle from a research robot to an autonomous racecar form factor 
+  - **Outcome:** Improved sensor placement, durability, and serviceability while transitioning the vehicle from a research robot to an autonomous racecar form factor
 
 header:
   teaser: 1_10th_racecar/01_Jack_Robot_v6.jpg
+
+featured: true
+order: 4
+
+card_category: "Sensor Packaging"
+
+card_image: /images/1_10th_racecar/01_Jack_Robot_v6.jpg
+
+card_summary: >
+  Sensor packaging and chassis integration for autonomous racing.
+
+card_tags:
+  - CAD
+  - 3D Printing
+  - ROS2
+  - Sensors
 ---
 
 ## Overview

@@ -1,29 +1,46 @@
 ---
-title: "Payload Delivery Plane (Col. Pollo J. Rosso) "
+title: "Payload Delivery Plane (Col. Pollo J. Rosso)"
 date: 2025-06-15
 collection: portfolio
 tags: [CAD, Python, MATLAB]
+
 excerpt: |
   **Overview**
-  - **System:** Team-based autonomous systems project developed for ECEMAE 148
-  - **Role:** Team member contributing to system integration, implementation, and testing
-  - **Tools:** ROS2, Python, C++, Git, embedded sensors and compute hardware
-  - **Outcome:** Demonstrated a functional autonomous system with documented architecture, testing results, and final presentation
-  
+  - **System:** Fixed-wing RC aircraft designed to autonomously deliver competition payloads
+  - **Role:** Aircraft design, payload mechanism development, structural integration, and flight testing
+  - **Tools:** CAD, MATLAB, Python, fabrication, rapid prototyping
+  - **Outcome:** Designed, built, and flight-tested a competition aircraft capable of accurately delivering payloads while satisfying mission constraints
+
 header:
   teaser: delivery_plane/DSC_0420.jpg
 
-attachments:
- - title: "Preliminary Design Review (FDR)"
-   pdf: /files/docs/payload_delivery/PDR_MJ5.pdf
-   pptx: /files/docs/payload_delivery/PDR_Presentation.pptx
- - title: "Final Design Review (FDR)" 
-   pdf: /files/docs/payload_delivery/FDR_MJ5.pdf
-   pptx: /files/docs/payload_delivery/FDR_Presentation.pptx
- - title: "Senior Day Poster"
-   pdf: /files/docs/payload_delivery/Team_3_MJ5_Poster_colored_fixedlogo.pdf   
+featured: true
+order: 1
 
- 
+card_category: "Aircraft Design"
+
+card_image: /images/delivery_plane/DSC_0420.jpg
+
+card_summary: >
+  Designed and built a competition payload delivery aircraft.
+
+card_tags:
+  - Aircraft Design
+  - CAD
+  - Flight Testing
+  - Mechanisms
+
+attachments:
+  - title: "Preliminary Design Review (PDR)"
+    pdf: /files/docs/payload_delivery/PDR_MJ5.pdf
+    pptx: /files/docs/payload_delivery/PDR_Presentation.pptx
+
+  - title: "Final Design Review (FDR)"
+    pdf: /files/docs/payload_delivery/FDR_MJ5.pdf
+    pptx: /files/docs/payload_delivery/FDR_Presentation.pptx
+
+  - title: "Senior Day Poster"
+    pdf: /files/docs/payload_delivery/Team_3_MJ5_Poster_colored_fixedlogo.pdf
 ---
 ## Overview
 - **System:** Fixed-wing RC payload delivery aircraft (senior capstone)

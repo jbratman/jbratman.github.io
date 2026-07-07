@@ -3,15 +3,36 @@ title: "Aero-Structural Analysis Project"
 date: 2024-08-06
 collection: portfolio
 tags: [CFD, FEA, Structures, Aerodynamics, Aerospace]
+
 excerpt: |
   **Overview**
-    - **System:** Aero-structural analysis of an aerodynamic support structure subjected to flight-relevant loading
-    - **Role:** Primary analyst responsible for aerodynamic loading estimation, structural analysis, and technical reporting
-    - **Tools:** CFD, FEA, CAD, MATLAB/Python, technical documentation
-    - **Outcome:** Quantified aerodynamic loads and structural response to compare design concepts, materials, and safety margins
+  - **System:** Aero-structural analysis of an aerodynamic support structure subjected to flight-relevant loading
+  - **Role:** Primary analyst responsible for aerodynamic loading estimation, structural analysis, and technical reporting
+  - **Tools:** CFD, FEA, CAD, MATLAB/Python, technical documentation
+  - **Outcome:** Quantified aerodynamic loads and structural response to compare design concepts, materials, and safety margins
 
 header:
   teaser: aero_analysis_project/Baseline Flow.jpg
+
+featured: true
+order: 6
+
+card_category: "Engineering Analysis"
+
+card_image: /images/aero_analysis_project/Baseline Flow.jpg
+
+card_summary: >
+  CFD and FEA used to evaluate aerodynamic structural performance.
+
+card_tags:
+  - CFD
+  - FEA
+  - Structural Analysis
+  - Aerodynamics
+
+role: Primary Analyst
+timeline: Summer 2024
+team: UC San Diego
 ---
 
 ## Overview
