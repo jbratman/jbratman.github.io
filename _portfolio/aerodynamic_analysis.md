@@ -1,83 +1,189 @@
 ---
-title: "Aero-Structural Analysis Project"
+layout: project-case-study
+title: "Aero-Structural Analysis"
+subtitle: "Coupled CFD and FEA evaluation of aerodynamic support structures"
 date: 2024-08-06
 collection: portfolio
-tags: [CFD, FEA, Structures, Aerodynamics, Aerospace]
+permalink: /aerodynamic_analysis/
 
-excerpt: |
-  **Overview**
-  - **System:** Aero-structural analysis of an aerodynamic support structure subjected to flight-relevant loading
-  - **Role:** Primary analyst responsible for aerodynamic loading estimation, structural analysis, and technical reporting
-  - **Tools:** CFD, FEA, CAD, MATLAB/Python, technical documentation
-  - **Outcome:** Quantified aerodynamic loads and structural response to compare design concepts, materials, and safety margins
+project_type: "Engineering Analysis · Aerodynamics and Structures"
+hero_image: /images/aero_analysis_project/Baseline Flow.jpg
+hero_summary: >-
+  Used CFD-derived aerodynamic loads and finite element analysis to compare
+  structural concepts, material choices, load paths, stress, deflection, and safety margin.
 
-header:
-  teaser: aero_analysis_project/Baseline Flow.jpg
+intro_title: "Aerodynamic loading translated into structural design decisions"
+intro: >-
+  The project connected flow analysis and structural simulation so that mounting
+  concepts could be evaluated using consistent, flight-relevant loading rather
+  than isolated structural assumptions.
+
+role: "Primary Analyst"
+timeline: "Summer 2024"
+team: "Individual analysis project"
+organization: "UC San Diego"
+status: "Completed"
+
+tools:
+  - CFD
+  - FEA
+  - CAD
+  - MATLAB
+  - Python
+  - Technical Reporting
+
+skills:
+  - Aerodynamic Loading
+  - Structural Analysis
+  - Load-Path Evaluation
+  - Design Comparison
+
+process:
+  - title: "Problem Definition"
+    detail: "Defined mounting concepts, materials, constraints, and evaluation criteria."
+  - title: "CFD Setup"
+    detail: "Established steady-state flow conditions and pressure loading."
+  - title: "Load Extraction"
+    detail: "Converted pressure results into structural force inputs."
+  - title: "FEA Setup"
+    detail: "Defined materials, constraints, meshes, and load cases."
+  - title: "Comparison"
+    detail: "Evaluated stress, deformation, safety factor, and load paths."
+  - title: "Recommendation"
+    detail: "Identified the geometry and material tradeoffs driving structural performance."
+
+results:
+  - value: "CFD → FEA"
+    label: "Coupled analysis workflow"
+  - value: "Multiple"
+    label: "Geometries and materials compared"
+  - value: "Critical"
+    label: "Stress regions identified"
+  - value: "Verified"
+    label: "Acceptable stress and safety margins"
+  - value: "Geometry"
+    label: "Strongest driver of peak stress"
+  - value: "Documented"
+    label: "Technical assumptions and conclusions"
 
 featured: true
 order: 6
-
+card_title: "Aero-Structural Analysis"
 card_category: "Engineering Analysis"
-
 card_image: /images/aero_analysis_project/Baseline Flow.jpg
-
-card_summary: >
+card_summary: >-
   CFD and FEA used to evaluate aerodynamic structural performance.
-
 card_tags:
   - CFD
   - FEA
-  - Structural Analysis
+  - Structures
   - Aerodynamics
 
-role: Primary Analyst
-timeline: Summer 2024
-team: UC San Diego
+previous_project:
+  title: "ECE/MAE 148 Autonomous Vehicle"
+  url: /final_project/
 ---
 
-## Overview
-- **System:** Aero-structural analysis of an aerodynamic support structure subjected to flight-relevant loading
-- **Role:** Primary analyst responsible for aerodynamic loading estimation, structural analysis, and technical reporting
-- **Tools:** CFD, FEA, CAD, MATLAB/Python, technical documentation
-- **Outcome:** Quantified aerodynamic loads and structural response to compare design concepts, materials, and safety margins
+## The Challenge
 
+The objective was to evaluate aerodynamic mounting concepts under externally applied aerodynamic loads.
 
-## Problem Statement
-The objective of this project was to evaluate the structural viability of aerodynamic mounting concepts subjected to externally applied aerodynamic loading. The system was required to withstand representative aerodynamic forces while maintaining acceptable stress levels, deflection limits, and safety factors across multiple materials and geometries.
+Each design needed to maintain acceptable:
 
-The analysis required coupling aerodynamic load estimation with finite element structural modeling in order to assess how design choices influenced strength, stiffness, and overall robustness. Design decisions were informed by structural performance, material behavior, and practical manufacturability considerations.
+- stress
+- deformation
+- safety factor
+- stiffness
+- load-path efficiency
+- manufacturability
 
-## Approach
+The central challenge was connecting realistic aerodynamic loading to structural response in a consistent way.
 
-### Aerodynamic Modeling (CFD)
-Aerodynamic loading was estimated using computational fluid dynamics to determine pressure distribution and resultant forces acting on the structure under representative operating conditions. The CFD analysis provided a consistent basis for defining externally applied loads used in subsequent structural evaluation.
+## Aerodynamic Modeling
 
-Key aerodynamic assumptions were selected to represent steady-state loading conditions appropriate for comparative design evaluation rather than transient or highly unsteady effects.
+Computational fluid dynamics was used to estimate pressure distribution and resultant aerodynamic force under representative steady-state operating conditions.
 
-### Structural Modeling (FEA)
-Finite element analysis was performed to evaluate stress, deformation, and safety factors resulting from the applied aerodynamic loads. Multiple material options and geometric configurations were analyzed to compare structural performance and identify limiting cases.
+The CFD model provided a common loading basis for all structural concepts.
 
-The structural model focused on capturing load paths, boundary conditions, and critical stress regions relevant to the mounting configuration and support geometry.
+The analysis emphasized comparative evaluation rather than transient aerodynamic phenomena.
 
-### Assumptions & Load Cases
-- Aerodynamic forces derived from CFD results were applied as equivalent external loads
-- Linear elastic material behavior was assumed for all candidate materials
-- Boundary conditions were defined to represent realistic mounting and constraint conditions
-- Load cases were selected to enable direct comparison between design concepts and material choices
+## Structural Modeling
 
-## Key Results
+Finite element analysis was used to evaluate:
 
-- Estimated aerodynamic loading using CFD-derived forces representative of steady-state operating conditions
-- Identified critical stress regions and deformation trends across multiple mounting geometries
-- Compared structural response across candidate materials, highlighting stiffness and safety factor trade-offs
-- Demonstrated that geometry and load path selection had a stronger influence on peak stress than material choice alone
-- Verified that selected configurations maintained acceptable stress levels and safety margins under the applied load cases
+- von Mises stress
+- deformation
+- safety factor
+- critical regions
+- load transfer through the mounting geometry
+
+Multiple material options and geometric configurations were compared.
+
+<div class="engineering-decision">
+  <p class="engineering-decision__label">Engineering Decision</p>
+  <p><strong>Keep the aerodynamic load case consistent across every structural concept.</strong></p>
+  <p>This isolated the effect of geometry, material, and load path instead of allowing inconsistent loading assumptions to dominate the comparison.</p>
+</div>
+
+## Assumptions and Boundary Conditions
+
+The analysis used the following assumptions:
+
+- CFD-derived forces represented equivalent steady-state external loads
+- material behavior remained linear elastic
+- constraints represented the intended mounting interfaces
+- load cases were selected for direct design comparison
+- local manufacturing details outside the primary load path were simplified
+
+## Design Comparison
+
+The analysis showed that mount geometry and load-path definition had a stronger effect on peak stress and deformation than material choice alone.
+
+Changing material improved stiffness and strength, but poorly directed loads still produced concentrated stress.
+
+This led to a design focus on:
+
+- smoother load transfer
+- reduced stress concentration
+- better constraint placement
+- more direct force paths
+- targeted reinforcement
+
+## My Contributions
+
+- defined the analysis workflow
+- created the aerodynamic model
+- estimated pressure and resultant loading
+- developed the structural model
+- defined boundary conditions
+- compared materials and geometries
+- interpreted stress and deformation trends
+- documented assumptions and conclusions
+
+## Results
+
+The project:
+
+- estimated representative aerodynamic loads
+- identified critical stress regions
+- compared structural response across candidate designs
+- quantified stiffness and safety-factor tradeoffs
+- verified acceptable stress levels for selected configurations
+- demonstrated the importance of geometry and load path
 
 ## Design Takeaways
 
-- Coupling aerodynamic load estimation with structural analysis is critical for evaluating rear wing mounting concepts under racing-relevant conditions
-- Mount geometry and load path definition have a greater impact on stress and deflection than material selection alone
-- Early identification of critical stress regions enables targeted design refinement of wing supports and attachment points
-- Steady-state aerodynamic load cases can provide meaningful insight for comparative evaluation of mounting concepts when applied consistently
-- Integrating CFD-derived loads with FEA early in the design process supports informed trade-offs between stiffness, strength, weight, and manufacturability in motorsports applications
+The most important conclusion was that structural performance depended strongly on how the design carried load—not only on the nominal strength of the selected material.
 
+Coupling CFD and FEA early in the process supported better tradeoffs between:
+
+- strength
+- stiffness
+- weight
+- geometry
+- manufacturability
+- safety margin
+
+## Lessons Learned
+
+Aero-structural simulation is most useful when the assumptions connecting the two domains are explicit. Reliable conclusions depend on traceable loads, realistic constraints, and consistent comparison criteria.

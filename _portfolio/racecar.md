@@ -1,132 +1,222 @@
 ---
-title: "1/10th Scale Autonomous Racecar Updates"
+layout: project-case-study
+title: "1/10th-Scale Autonomous Racecar"
+subtitle: "Sensor packaging and chassis integration for a racecar-form autonomy platform"
 date: 2025-08-20
 collection: portfolio
-tags: [ROS2, CAD, Python, Embedded]
+permalink: /racecar/
 
-excerpt: |
-  **Overview**
-  - **System:** 1/10th-scale autonomous racecar hardware integration and sensor packaging update
-  - **Role:** Mechanical design lead for sensor mounting, chassis integration, and serviceability improvements
-  - **Tools:** CAD, 3D printing, ROS2-compatible sensors, rapid prototyping
-  - **Outcome:** Improved sensor placement, durability, and serviceability while transitioning the vehicle from a research robot to an autonomous racecar form factor
+project_type: "Autonomous Systems · Sensor Packaging"
+hero_image: /images/1_10th_racecar/01_Jack_Robot_v6.jpg
+hero_summary: >-
+  Repackaged lidar, camera, compute, and GPS hardware to convert a research
+  robot into a durable, serviceable autonomous racecar compatible with standard RC bodies.
 
-header:
-  teaser: 1_10th_racecar/01_Jack_Robot_v6.jpg
+intro_title: "A research platform redesigned to function and present as an autonomous racecar"
+intro: >-
+  The update preserved the existing perception package while reducing external
+  protrusions, adding a second lidar, improving service access, and enabling
+  the use of conventional RC body shells.
+
+role: "Mechanical Design Lead"
+timeline: "August 2025"
+team: "Autonomous racing development team"
+organization: "Triton AI"
+status: "Completed"
+
+tools:
+  - CAD
+  - 3D Printing
+  - Livox Mid-360
+  - Camera Integration
+  - Rapid Prototyping
+  - RC Chassis Hardware
+
+skills:
+  - Sensor Packaging
+  - Chassis Integration
+  - Serviceability
+  - Rapid Prototyping
+
+process:
+  - title: "Baseline"
+    detail: "Documented the existing research-robot packaging and sensor positions."
+  - title: "Constraints"
+    detail: "Preserved sensor fields of view, GPS position, strength, and body compatibility."
+  - title: "CAD Repackaging"
+    detail: "Developed compact mounts for lidar, camera, compute, and body interfaces."
+  - title: "Prototype"
+    detail: "Printed and test-fit front and upper sensor hardware."
+  - title: "Body Integration"
+    detail: "Created repeatable templates and cutouts for shell installation."
+  - title: "Validation"
+    detail: "Verified fit, durability, access, and sensor placement."
+
+results:
+  - value: "2× LiDAR"
+    label: "Top and front perception coverage"
+  - value: "Body Ready"
+    label: "Compatible with standard RC body shells"
+  - value: "Reduced"
+    label: "External hardware protrusions"
+  - value: "Improved"
+    label: "Sensor and compute protection"
+  - value: "Repeatable"
+    label: "Body-shell and lidar installation"
+  - value: "Serviceable"
+    label: "Faster access for testing and repair"
 
 featured: true
 order: 4
-
+card_title: "1/10th-Scale Autonomous Racecar"
 card_category: "Sensor Packaging"
-
 card_image: /images/1_10th_racecar/01_Jack_Robot_v6.jpg
-
-card_summary: >
+card_summary: >-
   Sensor packaging and chassis integration for autonomous racing.
-
 card_tags:
   - CAD
   - 3D Printing
-  - ROS2
   - Sensors
+  - Integration
+
+previous_project:
+  title: "OpenSauce 2025 Autonomous Demo"
+  url: /openSauce/
+next_project:
+  title: "ECE/MAE 148 Autonomous Vehicle"
+  url: /final_project/
 ---
 
-## Overview
-- **System:** 1/10th-scale autonomous racecar hardware integration and sensor packaging update
-- **Role:** Mechanical design lead for sensor mounting, chassis integration, and serviceability improvements
-- **Tools:** CAD, 3D printing, ROS2-compatible sensors, rapid prototyping
-- **Outcome:** Improved sensor placement, durability, and serviceability while transitioning the vehicle from a research robot to an autonomous racecar form factor
+## The Challenge
 
+The existing vehicle functioned as a research robot, with sensors and compute hardware exposed above and around the chassis. The goal was to preserve the perception system while transitioning the platform into a racecar form factor that could accept standard RC body shells.
 
-## Problem & Constraints
-- Utilize current sensor package on vehicle
-- Integrate secondary Livox Mid-360 lidar into front area of vehicle
-- Maintain top lidar and GPS antenna position
-- Change appearance from robot to autonomous vehicle
-- Maintain strength and endurance from impacts
-- Improve serviceability  
+The redesign needed to:
 
-## Build, Test, Iterate
-This work focused on repackaging sensors and compute hardware to transition the vehicle from a research-oriented robotic platform into an autonomous racecar that could accept standard RC car bodies. Design changes prioritized compact packaging, durability, and serviceability while preserving sensor performance and enabling realistic racecar aesthetics.
+- retain the existing top lidar
+- preserve GPS antenna position
+- add a front Livox Mid-360 lidar
+- maintain camera visibility
+- protect sensors and compute hardware
+- survive impacts and vibration
+- improve serviceability
+- support repeatable body installation
+
+> **Engineering implication:** Packaging changes could not compromise perception geometry. Every mechanical improvement had to preserve sensor field of view and calibration assumptions.
+
+## Baseline Assessment
+
+The original configuration placed the sensor package prominently above the chassis. This supported research access but limited body compatibility and left hardware exposed.
+
+I documented:
+
+- existing mounting points
+- sensor heights and orientations
+- cable-routing constraints
+- body-shell interference
+- likely impact zones
+- service-access requirements
+
+## Front Lidar Integration
+
+A second Livox Mid-360 lidar was integrated into the front area of the vehicle.
+
+The mount needed to position the lidar low enough for body compatibility while preserving usable forward coverage. Camera placement and front-body geometry also had to be coordinated with the lidar mount.
+
+<div class="engineering-decision">
+  <p class="engineering-decision__label">Engineering Decision</p>
+  <p><strong>Integrate the front lidar through a repeatable body-shell cut template.</strong></p>
+  <p>This improved installation consistency and allowed replacement shells to be prepared without recreating the geometry from scratch.</p>
+</div>
+
+## Sensor and Compute Repackaging
+
+I redesigned the mounting system for:
+
+- top lidar
+- front lidar
+- camera
+- GPS antenna
+- compute hardware
+- body-shell interfaces
+
+The new layout reduced exposed hardware while keeping critical components accessible.
+
+## Prototype and Body Integration
+
+Mounts were iterated through CAD, 3D printing, test fitting, and shell modification.
+
+The body installation process included:
+
+- test fitting printed mounts
+- checking sensor clearances
+- creating cut templates
+- validating camera and lidar visibility
+- confirming removal and service access
 
 ## My Contributions
-I led the mechanical redesign and hardware repackaging effort to transition the platform from a research-oriented robotic vehicle into an autonomous racecar capable of accepting standard RC car bodies.
 
-My contributions included:
-- Served as the primary CAD designer for sensor mounts, compute packaging, and chassis integration
-- Repackaged perception and compute hardware to reduce external protrusions and improve form factor
-- Enabled compatibility with off-the-shelf RC car bodies while preserving sensor fields of view
-- Designed mounts to improve durability and serviceability under racing conditions
-- Supported system integration and testing to validate mechanical robustness and repeatability
+- primary CAD design for sensor and compute mounts
+- lidar and camera packaging
+- chassis interface design
+- body-shell compatibility
+- serviceability improvements
+- prototype fabrication and test fitting
+- installation planning
+- mechanical validation
 
-## Key Results
-- Successfully transitioned the platform from a research-oriented robotic vehicle to an autonomous racecar capable of accepting standard RC car bodies
-- Improved packaging and reduced external protrusions, enabling realistic vehicle aesthetics and improved protection of sensors and compute hardware
-- Maintained sensor performance and field-of-view while integrating components within a constrained chassis envelope
-- Improved durability and serviceability, reducing setup and repair time between testing sessions
-- Enabled future aerodynamic and body-fit experimentation by standardizing mounting locations and form factor
+## Results
 
-<div style="margin-bottom: 0px; font-size: 1.2em;">
-  Initial Starting Point:
-</div>
-<div style="display: flex; align-items: center; gap: 10px;">
-  <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/20250814_111441.jpg" alt="Original" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Original hardware location</figcaption>
+The final platform transitioned from a research-oriented robot into a compact autonomous racecar.
+
+Key outcomes included:
+
+- compatibility with standard RC car bodies
+- front and top lidar integration
+- preserved sensor functionality
+- reduced external protrusions
+- improved sensor protection
+- improved service access
+- repeatable body-shell preparation
+- standardized mounting geometry for future updates
+
+## Design Progression
+
+### Original Configuration and Initial CAD
+
+<div class="project-gallery__grid">
+  <figure class="project-gallery__item">
+    <img src="{{ '/images/1_10th_racecar/20250814_111441.jpg' | relative_url }}" alt="Original autonomous research vehicle hardware layout">
+    <figcaption><strong>Original Layout</strong><span>Research-oriented packaging before the redesign.</span></figcaption>
   </figure>
-  <figure style="flex:1; text-align:left;">
-    <img src="/images/1_10th_racecar/00_Jack_Robot_modified_hole_size_v4.jpg" alt="Modified" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Initial modified CAD design</figcaption>
-  </figure>
-</div>
-
-
-<div style="margin-bottom: 0px; font-size: 1.2em;">
-Chassis Tear Down and Initial Plan:
-</div>
-<div style="display: flex; align-items: center; gap: 10px;">
-  <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/20250818_193222.jpg" alt="Original" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Front lidar mount iterations</figcaption>
-  </figure>
-  <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/20250814_183841.jpg" alt="Modified" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Front lidar mounting position</figcaption>
+  <figure class="project-gallery__item">
+    <img src="{{ '/images/1_10th_racecar/00_Jack_Robot_modified_hole_size_v4.jpg' | relative_url }}" alt="Initial CAD redesign of the autonomous racecar">
+    <figcaption><strong>Initial CAD</strong><span>First repackaging concept.</span></figcaption>
   </figure>
 </div>
 
-<div style="margin-bottom: 0px; font-size: 1.2em;">
-Installation of Front Lidar:
-</div>
-<div style="display: flex; align-items: center; gap: 10px;">
-  <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/20250814_115533.jpg" alt="Original" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Initial body shell, with previous design cut outs</figcaption>
+### Front Lidar Development
+
+<div class="project-gallery__grid">
+  <figure class="project-gallery__item">
+    <img src="{{ '/images/1_10th_racecar/20250818_193222.jpg' | relative_url }}" alt="Front lidar mount prototypes">
+    <figcaption><strong>Mount Iterations</strong><span>Printed concepts used to validate fit and position.</span></figcaption>
   </figure>
-  <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/20250815_121627.jpg" alt="Modified" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Cut template allows repeatable lidar install</figcaption>
-  </figure>
-    <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/20250815_124622.jpg" alt="Modified" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Front lidar and camera mounted</figcaption>
+  <figure class="project-gallery__item">
+    <img src="{{ '/images/1_10th_racecar/20250814_183841.jpg' | relative_url }}" alt="Selected front lidar mounting position">
+    <figcaption><strong>Selected Position</strong><span>Front lidar integrated into the chassis envelope.</span></figcaption>
   </figure>
 </div>
 
-<div style="margin-bottom: 0px; font-size: 1.2em;">
-Installation of Body Shell and Completed Design:
-</div>
-<div style="display: flex; align-items: center; gap: 10px;">
-  <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/20250818_193410.jpg" alt="Original" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Final mounts 3D printed</figcaption>
+### Body Installation
+
+<div class="project-gallery__grid">
+  <figure class="project-gallery__item">
+    <img src="{{ '/images/1_10th_racecar/20250815_121627.jpg' | relative_url }}" alt="Body-shell cut template for the front lidar">
+    <figcaption><strong>Cut Template</strong><span>Repeatable body preparation for lidar installation.</span></figcaption>
   </figure>
-    <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/20250818_193522.jpg" alt="Modified" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>New mounts test fit before body shell modified </figcaption>
-  </figure>
-    <figure style="flex:1; text-align:center;">
-    <img src="/images/1_10th_racecar/01_Jack_Robot_v6.jpg" alt="Modified" style="width:100%;height:250px; object-fit:cover;">
-    <figcaption>Final CAD design with all componets place </figcaption>
+  <figure class="project-gallery__item">
+    <img src="{{ '/images/1_10th_racecar/20250815_124622.jpg' | relative_url }}" alt="Front lidar and camera mounted through the racecar body">
+    <figcaption><strong>Integrated Sensors</strong><span>Front lidar and camera installed with the body shell.</span></figcaption>
   </figure>
 </div>

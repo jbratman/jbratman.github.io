@@ -1,0 +1,33 @@
+<section class="project-documents">
+  <div class="project-section-heading">
+    <p class="project-kicker">Design Documentation</p>
+    <h2>Reports and presentations</h2>
+  </div>
+
+  <div class="project-documents__grid">
+    {% for document in page.documents %}
+      <article class="project-document-card">
+        <div>
+          <span>{{ document.type | default: "Document" }}</span>
+          <h3>{{ document.title }}</h3>
+          {% if document.description %}
+            <p>{{ document.description }}</p>
+          {% endif %}
+        </div>
+
+        <div class="project-document-card__actions">
+          {% if document.pdf %}
+            <a href="{{ document.pdf | relative_url }}" target="_blank" rel="noopener">
+              View PDF →
+            </a>
+          {% endif %}
+          {% if document.pptx %}
+            <a href="{{ document.pptx | relative_url }}" target="_blank" rel="noopener">
+              Download PPTX →
+            </a>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
