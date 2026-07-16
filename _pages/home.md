@@ -1,7 +1,7 @@
 ---
 layout: concept-home
 title: "Jeff Bratman | Engineering Portfolio"
-permalink: /home-concept/
+permalink: /
 ---
 
 <div class="landing landing--cinematic">
