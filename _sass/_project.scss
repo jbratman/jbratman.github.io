@@ -795,3 +795,92 @@
     border-right: 1px solid var(--project-border);
   }
 }
+
+/* -------------------------
+   Project Figures
+------------------------- */
+
+.project-figure {
+  width: 100%;
+  max-width: 900px;
+  margin: 3rem auto;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+  }
+
+  figcaption {
+    max-width: 70ch;
+    margin: 0.8rem auto 0;
+    color: var(--project-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+.project-figure--analysis {
+    max-width: 950px;
+}
+.project-figure--wide {
+  max-width: 1200px;
+}
+
+.project-figure--medium {
+  max-width: 700px;
+}
+
+/* -------------------------
+   Brake Results
+------------------------- */
+
+.brake-results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 3rem 0 1rem;
+}
+
+.brake-result-card {
+  min-height: 150px;
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--project-border);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brake-result-card__value {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: var(--project-accent);
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.brake-result-card__label {
+  color: var(--project-muted);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.brake-result-card{
+    transition: transform .2s ease,
+                border-color .2s ease;
+}
+
+.brake-result-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(220,255,70,.35);
+}
+
+@media (max-width: 680px) {
+  .brake-results-grid {
+    grid-template-columns: 1fr;
+  }
+}

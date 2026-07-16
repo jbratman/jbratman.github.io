@@ -1,7 +1,7 @@
 ---
 layout: project-case-study
 title: "Autonomous Go-Kart"
-subtitle: "Mechanical integration and subsystem development for a student autonomous racing platform"
+subtitle: "Mechanical integration and subsystem development for an autonomous racing platform"
 date: 2025-06-15
 collection: portfolio
 permalink: /Autonomous_Go-Kart/
@@ -13,7 +13,7 @@ hero_summary: >-
   braking response, electrical reliability, battery retention, packaging, and
   serviceability for repeated on-track testing.
 
-intro_title: "Mechanical systems designed around track reliability and rapid iteration"
+intro_title: "Engineering Reliable Hardware for Autonomous Racing"
 intro: >-
   The kart combined perception, controls, actuation, power electronics, and
   mechanical hardware within an existing racing chassis. My work focused on
@@ -90,37 +90,117 @@ next_project:
 
 ## The Challenge
 
-The autonomous go-kart had to support perception, controls, compute, power distribution, and autonomous actuation within an existing racing chassis. The mechanical systems needed to survive vibration, shock, and repeated track use while remaining accessible enough for rapid troubleshooting.
+Triton AI is developing an autonomous electric go-kart to compete in the Autonomous Karting Series, where success depended on completing fast, consistent, and reliable autonomous laps. During the previous season, the team demonstrated race-winning pace but recurring mechanical and thermal reliability issues prevented the vehicle from consistently finishing events, ultimately resulting in a second-place overall finish.
 
-The main constraints included:
+Entering the new season, improving reliability became just as important as improving autonomous performance. As Mechanical Lead, I was responsible for designing, integrating, and validating the vehicle's mechanical subsystems to support reliable autonomous operation.
 
-- limited mounting locations within the existing chassis
-- high vibration and impact loading
-- rapid design changes during active testing
-- thermal loading from high-current electrical components
-- close coupling between sensor placement and autonomy performance
-- the need for fast service and repair between track sessions
+My work included brake actuation, electrical packaging, battery retention, sensor integration, and overall vehicle integration within an existing racing chassis. Every design balanced performance, durability, serviceability, and manufacturability while supporting a team that was continuously iterating on both hardware and software.
 
-> **Engineering implication:** Mechanical packaging was part of the autonomy system. A mount, enclosure, or linkage failure could prevent software validation even when the autonomy stack itself was functioning correctly.
+### Key Engineering Constraints
 
-## Brake Actuation Analysis
+- Existing chassis geometry severely limited available mounting locations.
+- Hardware needed to survive continuous vibration, impacts, and repeated track sessions.
+- Sensor placement directly affected perception accuracy and autonomous performance.
+- High-current electrical components generated significant thermal loads that influenced enclosure design.
+- Components had to remain easily accessible for rapid maintenance and debugging between test sessions.
+- Hardware designs needed to accommodate frequent software-driven changes without requiring complete redesigns.
 
-I developed a Python-based analysis tool to characterize the relationship between a linear actuator, crank geometry, master-cylinder stroke, hydraulic pressure, and resulting brake response.
+> **Engineering implication:** Winning required more than advanced autonomy software. It requires maximizing productive testing time. Every hour spent repairing hardware, diagnosing thermal issues, or recalibrating sensors was an hour that couldn't be spent collecting data, validating software, or improving lap times. Reliable mechanical systems became a force multiplier for the entire engineering team.
 
-Initial evaluation showed that more than 25% of actuator travel was consumed before meaningful master-cylinder motion began. This compressed braking authority into a narrow region of the actuator stroke and made calibration difficult.
+## Brake System Analysis & Optimization
 
-The tool was used to:
+During autonomous testing, the brake system exhibited inconsistent response that made braking difficult to calibrate. Initial actuator movement produced little hydraulic pressure, compressing most of the available braking authority into a small portion of the actuator stroke. This limited braking resolution and reduced the controls team's ability to tune repeatable autonomous braking behavior.
 
-- map actuator displacement to master-cylinder travel
-- calculate mechanical advantage throughout the stroke
-- estimate force transmission and hydraulic response
-- compare alternate actuator mounting positions
-- identify the geometry causing delayed brake engagement
+Rather than relying on trial-and-error modifications, I developed a custom Python analysis tool to model the complete brake system. The model simulated the relationship between linear actuator displacement, linkage geometry, master-cylinder stroke, hydraulic pressure, clamp force, and braking torque, allowing design changes to be evaluated before manufacturing new hardware.
+
+<figure class="project-figure project-figure--analysis">
+  <img src="/images/go_kart/brake_gui.jpg" alt="Python brake analysis tool">
+  <figcaption>
+    Custom Python analysis tool developed to model linkage geometry, hydraulic pressure, clamp force, and braking torque while allowing rapid evaluation of alternative actuator positions.
+  </figcaption>
+</figure>
+
+The analytical model was used to:
+
+- Map actuator displacement to master-cylinder travel.
+- Calculate changing mechanical advantage throughout the stroke.
+- Estimate hydraulic pressure, clamp force, and braking torque.
+- Compare alternate actuator mounting locations.
+- Quantify the effects of linkage geometry before fabrication.
+
+## Baseline Response
+
+The initial analysis revealed that more than **25% of actuator travel** was consumed before meaningful master-cylinder displacement occurred. This dead-travel region compressed useful brake control into the remaining actuator stroke, making the system unnecessarily sensitive and difficult for the controls team to calibrate.
+
+<figure class="project-figure project-figure--medium">
+  <img src="/images/go_kart/Original_brake_response.jpg" alt="Original brake response">
+  <figcaption>
+    Initial brake response showing substantial actuator travel before hydraulic pressure increased, leaving a narrow region for useful brake modulation.
+  </figcaption>
+</figure>
 
 <div class="engineering-decision">
   <p class="engineering-decision__label">Engineering Decision</p>
-  <p><strong>Move the actuator closer to the crank pivot.</strong></p>
-  <p>The revised geometry reduced dead travel and produced a response closer to a 1:1 actuator-to-brake relationship, widening the useful control range for the controls team.</p>
+  <p><strong>Relocate the linear actuator slightly closer to the crank pivot to increase usable braking resolution while retaining the existing hydraulic system.</strong></p>
+  <p>
+    Rather than redesigning the hydraulic system, the analytical model showed that a small change in actuator position would improve the linkage geometry, allowing hydraulic pressure to build earlier in the actuator stroke while maintaining the existing brake hardware.
+  </p>
+</div>
+
+## Concept Evaluation
+
+The analytical model indicated that only a small change in actuator mounting location was required. Moving the actuator approximately one inch closer to the crank pivot and slightly higher improved the effective mechanical advantage early in the stroke while leaving the remainder of the brake hardware unchanged.
+
+<figure class="project-figure project-figure--medium">
+  <img src="/images/go_kart/brake_linkage_design.jpg" alt="Brake linkage concept">
+  <figcaption>
+    Simplified concept illustration showing the design intent. The actual implementation retained the original linkage while repositioning only the actuator mounting location.
+  </figcaption>
+</figure>
+
+## Design Validation
+
+The updated actuator location was re-evaluated using the analytical model before fabrication. The revised geometry produced hydraulic pressure much earlier in the actuator stroke, creating a response much closer to a linear relationship between actuator displacement and brake output while maintaining the required braking performance.
+
+<figure class="project-figure project-figure--analysis">
+  <img src="/images/go_kart/brake_analysis_tool.jpg" alt="Updated brake analysis">
+  <figcaption>
+    Updated analytical model showing improved brake response after repositioning the actuator, providing increased usable braking resolution while maintaining clamp force and braking torque.
+  </figcaption>
+</figure>
+
+Developing the analytical model allowed actuator positions to be evaluated before modifying hardware. This reduced physical trial-and-error, provided quantitative justification for the final mounting location, and gave the controls team a significantly more predictable brake response for calibration.
+
+## Implemented Hardware
+
+The revised actuator mounting was fabricated and integrated into the autonomous race kart prior to track testing. Although the physical change consisted only of relocating the actuator mounting position, the completed system demonstrated approximately 25% less linkage free travel before brake engagement while retaining the existing hydraulic hardware.
+
+<figure class="project-figure project-figure--wide">
+  <img src="/images/go_kart/1750071649984.jpg" alt="Brake system installed on kart">
+  <figcaption>
+    Final actuator mounting integrated into Triton AI's autonomous race kart. A small change in actuator position produced a significant improvement in usable braking resolution without redesigning the brake hardware.
+  </figcaption>
+</figure>
+<div class="brake-results-grid">
+  <div class="brake-result-card">
+    <span class="brake-result-card__value">~25%</span>
+    <span class="brake-result-card__label">Reduction in linkage free travel</span>
+  </div>
+
+  <div class="brake-result-card">
+    <span class="brake-result-card__value">Earlier</span>
+    <span class="brake-result-card__label">Hydraulic pressure build-up</span>
+  </div>
+
+  <div class="brake-result-card">
+    <span class="brake-result-card__value">Unchanged</span>
+    <span class="brake-result-card__label">Existing hydraulic brake hardware</span>
+  </div>
+
+  <div class="brake-result-card">
+    <span class="brake-result-card__value">Python</span>
+    <span class="brake-result-card__label">Model-guided actuator repositioning</span>
+  </div>
 </div>
 
 ## Battery Retention and Packaging
@@ -162,31 +242,7 @@ My mechanical integration work included:
 
 Hardware was evaluated during repeated on-track sessions. Vibration-related issues, access problems, and packaging conflicts were documented and fed directly into revised designs.
 
-## My Contributions
 
-- led mechanical design and subsystem integration
-- developed the brake-analysis tool
-- redesigned brake linkage geometry
-- evaluated alternate battery layouts
-- implemented improved battery retention
-- redesigned the electrical enclosure and thermal layout
-- designed and fabricated sensor and compute mounts
-- supported controls and autonomy teams during test cycles
-- participated in track testing and post-test iteration
+## Systems Engineering Perspective
 
-## Results
-
-The updated hardware provided a more reliable mechanical foundation for autonomous development.
-
-Key outcomes included:
-
-- improved brake control resolution
-- improved battery retention under track loading
-- reduced thermal stress inside the electrical enclosure
-- improved access for debugging and repair
-- durable mounting for sensors and compute hardware
-- faster iteration during active test sessions
-
-## Lessons Learned
-
-Mechanical integration work on autonomous vehicles must be evaluated at the system level. Packaging decisions affect thermal performance, sensor behavior, serviceability, calibration, and ultimately the amount of useful track time available to the software team.
+This project reinforced that autonomous vehicle performance depends on far more than perception and controls software. Mechanical packaging, thermal management, serviceability, and subsystem integration directly determine how much productive testing a team can accomplish. Designing reliable hardware not only improves vehicle performance—it enables the software team to collect more data, iterate faster, and spend more time improving autonomy instead of repairing the vehicle.
