@@ -609,8 +609,8 @@
   }
 
   .project-hero__content {
-    margin-top: -2.5rem;
-    padding: 0 0 4rem;
+    margin-top: 0;
+    padding: 2.5rem 0 3.5rem;
   }
 
   .project-hero__scroll {
@@ -657,6 +657,10 @@
 
   .project-facts {
     position: static;
+  }
+
+  .project-main {
+    padding-top: 3.5rem;
   }
 
   .project-results__grid,
