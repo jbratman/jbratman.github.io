@@ -40,6 +40,8 @@ skills:
   - Brake Analysis
   - Electrical Packaging
 
+process_heading: "From system constraints to track-validated vehicle hardware"
+
 process:
   - title: "Requirements"
     detail: "Defined mounting, thermal, braking, retention, and serviceability needs."
@@ -53,6 +55,8 @@ process:
     detail: "Built and installed revised mechanical hardware for testing."
   - title: "Track Validation"
     detail: "Evaluated durability, serviceability, thermal behavior, and control response."
+
+results_heading: "Validated through build and track testing"
 
 results:
   - value: "≈1:1"
@@ -203,15 +207,73 @@ The revised actuator mounting was fabricated and integrated into the autonomous 
   </div>
 </div>
 
-## Battery Retention and Packaging
+## Battery Retention & Packaging
 
-I evaluated two traction-battery layouts.
+The existing traction batteries were mounted in enclosures on the left and right side pods of the kart. Although this arrangement preserved the vehicle’s traditional layout, the batteries required more secure retention under vibration and dynamic track loading, and the enclosures needed better access for inspection and maintenance.
 
-The first retained the existing left- and right-side-pod architecture but improved retention and packaging. The second relocated the batteries toward the seat region to centralize mass and reduce lateral center-of-gravity offset.
+I developed two packaging concepts to evaluate whether the existing architecture should be improved or replaced.
 
-The centralized layout offered potential handling benefits, but it conflicted with program requirements to preserve a traditional kart appearance and would have required additional fabrication time and funding.
+### Concept 1 — Modified Side-Pod Enclosures
 
-The implemented design retained the side-pod arrangement and added a universal automotive-style hold-down system that improved battery retention under vibration and dynamic loading.
+The first concept retained the existing left and right-side enclosures while replacing the improvised retention arrangement with universal automotive-style battery mounts. Quick-release pins and hinges were also evaluated to improve access without requiring the enclosures to be completely removed.
+
+This approach offered several practical advantages:
+
+- Reused much of the existing enclosure architecture.
+- Required fewer changes to vehicle wiring and packaging.
+- Improved battery retention using commercially available hardware.
+- Preserved the kart’s existing appearance.
+- Reduced fabrication time and implementation risk.
+
+### Concept 2 — Center-Chassis Packaging
+
+The second concept relocated both batteries toward the seat region. Centralizing the batteries would reduce lateral center-of-gravity offset and allow their position to partially counterbalance the motor’s mass.
+
+However, this concept required a new enclosure and mounting structure, additional fabrication, possible wiring extensions, and further packaging development around the seat and rear chassis tubes. The available CAD also lacked sufficient detail to confirm every clearance before physical inspection.
+
+<div class="project-comparison">
+  <figure class="project-figure">
+    <img
+      src="{{ '/images/go_kart/wing_mount_battery_design.jpg' | relative_url }}"
+      alt="Side-pod battery concept using an automotive-style hold-down"
+      loading="lazy">
+    <figcaption>
+      <strong>Modified side-pod concept.</strong>
+      Retained the existing vehicle architecture while improving battery
+      retention and enclosure access.
+    </figcaption>
+  </figure>
+
+  <figure class="project-figure">
+    <img
+      src="{{ '/images/go_kart/center_battery_design.jpg' | relative_url }}"
+      alt="Center-chassis concept relocating the traction batteries behind the seat"
+      loading="lazy">
+    <figcaption>
+      <strong>Center-chassis concept.</strong>
+      Relocated the batteries toward the seat to centralize mass and partially
+      offset the motor’s lateral weight.
+    </figcaption>
+  </figure>
+</div>
+
+<div class="engineering-decision">
+  <p class="engineering-decision__label">Engineering Decision</p>
+  <p><strong>Retain the side-pod architecture and improve the battery-retention system.</strong></p>
+  <p>
+    Although the center-chassis concept offered potential mass-distribution benefits,
+    those benefits did not justify the additional cost, fabrication effort, packaging
+    uncertainty, and disruption to the existing vehicle architecture. The side-pod
+    solution addressed the immediate reliability problem while minimizing implementation
+    risk.
+  </p>
+</div>
+
+### Implemented Solution
+
+The final design retained the existing side-pod arrangement and added universal automotive-style hold-down hardware. This provided more secure battery retention under vibration and track loading while preserving the existing vehicle layout and avoiding unnecessary changes to the electrical system.
+
+The result was not the most aggressive packaging concept but the solution that best balanced reliability, cost, schedule, serviceability, and integration risk.
 
 ## Electrical Housing Redesign
 

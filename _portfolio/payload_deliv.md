@@ -39,6 +39,8 @@ skills:
   - Mechanism Design
   - Flight Test
 
+process_heading: "From requirements to validated flight hardware"
+
 process:
   - title: "Requirements"
     detail: "Defined payload, propulsion, safety, and mission constraints."
@@ -52,6 +54,8 @@ process:
     detail: "Built airframe, payload hardware, and avionics packaging."
   - title: "Flight Test"
     detail: "Validated, diagnosed failures, redesigned, and completed deployment."
+
+results_heading: "Validated through build and flight testing"
 
 results:
   - value: "2.125 kg"
@@ -164,19 +168,63 @@ The propulsion analysis supported:
 
 The volume payload was housed in a 3D-printed bomb-bay module integrated into the lower fuselage. The final mechanism used two micro-servos and a four-bar linkage to drive opposing cargo doors through approximately 90 degrees of rotation.
 
+<figure class="project-figure project-figure--wide">
+  <img
+    src="{{ '/images/delivery_plane/Delivery_Assembly_CAD.jpg' | relative_url }}"
+    alt="CAD model of the payload bay, opposing cargo doors, servos, and four-bar linkage"
+    loading="lazy">
+  <figcaption>
+    Payload-bay CAD showing the opposing cargo doors, dual micro-servos, and
+    four-bar linkage integrated into the lower fuselage structure.
+  </figcaption>
+</figure>
+
 <div class="engineering-decision">
   <p class="engineering-decision__label">Engineering Decision</p>
-  <p><strong>Four-bar linkage with a near-locked closed geometry.</strong></p>
-  <p>This reduced continuous servo holding load, improved packaging efficiency, and helped the cargo doors remain secure under vibration and aerodynamic loading.</p>
+  <p><strong>Use a four-bar linkage with a near-locked closed geometry.</strong></p>
+  <p>
+    The selected linkage reduced continuous servo holding load, improved
+    packaging efficiency, and helped the cargo doors remain secure under
+    vibration and aerodynamic loading.
+  </p>
 </div>
 
 ### Linkage Analysis
 
 I developed a MATLAB model to evaluate servo rotation, linkage position, and cargo-door travel before fabrication. This allowed the team to compare geometry options and identify binding or insufficient travel before manufacturing hardware.
 
+<figure class="project-figure project-figure--animation">
+  <img
+    src="{{ '/images/delivery_plane/fourbar_animation.gif' | relative_url }}"
+    alt="MATLAB four-bar linkage simulation showing the payload-door motion"
+    loading="lazy">
+  <figcaption>
+    MATLAB linkage simulation used to evaluate servo input, crank rotation,
+    and cargo-door travel before fabrication.
+  </figcaption>
+</figure>
+
 ### Bench-Test Controls
 
 A Python Tkinter interface was used during bench testing to command the deployment servos and repeatedly cycle the mechanism. This simplified troubleshooting before integration into the aircraft radio-control architecture.
+
+<figure class="project-figure project-figure--medium">
+  <video
+    controls
+    muted
+    loop
+    playsinline
+    preload="metadata">
+    <source
+      src="{{ '/videos/delivery_plane/20250521_174541.mp4' | relative_url }}"
+      type="video/mp4">
+    Your browser does not support embedded video.
+  </video>
+  <figcaption>
+    Integrated payload mechanism undergoing repeated bench testing before
+    installation of the final radio-control interface.
+  </figcaption>
+</figure>
 
 ## Structural Integration and Fabrication
 
@@ -210,44 +258,31 @@ The first flights exposed integration issues that were not fully apparent during
 - secured critical fasteners with threadlocker
 - redesigned and reinforced the servo mount
 
+<figure class="project-figure project-figure--medium">
+  <img
+    src="{{ '/images/delivery_plane/motor_extension_and_shim.jpg' | relative_url }}"
+    alt="Motor extension and angled thrust-line shim installed on the aircraft"
+    loading="lazy">
+  <figcaption>
+    Plywood motor extension and 3D-printed thrust-line shim used to move the
+    motor approximately 15 mm forward while introducing right and down thrust.
+    The change helped correct the aft center of gravity and improve power-on
+    behavior.
+  </figcaption>
+</figure>
+
 ### Flight 2 — Validation
 
 The revised aircraft demonstrated improved stability, reliable payload-door operation, and successful in-flight payload release.
 
 > **Test lesson:** Kinematic motion alone was not sufficient validation. The mechanism also had to survive vibration, fastener loosening, structural deflection, and repeated actuation under installed conditions.
 
-## My Contributions
 
-- aircraft configuration and sizing studies
-- propulsion and propeller analysis
-- payload-system architecture
-- four-bar linkage design
-- MATLAB mechanism simulation
-- Python deployment-test interface
-- structural CAD and fabrication
-- servo, linkage, and avionics integration
-- ground and flight testing
-- post-test redesign and repair
+## Engineering Perspective
 
-## Results
+This project reinforced that the payload system could not be developed independently from the rest of the aircraft. Its dimensions, mass, linkage geometry, servo placement, structural loads, and service requirements directly influenced the fuselage architecture, avionics packaging, and aircraft center of gravity.
 
-The completed aircraft successfully flew with the competition payloads and deployed the required volume payload in flight.
-
-The final configuration achieved:
-
-- approximately 1.4 kg empty weight
-- approximately 2.125 kg gross weight
-- approximately 0.68 kg weight payload
-- approximately 700 cm³ volume payload
-- approximately 24% MAC loaded center of gravity
-- repeatable payload-door operation
-- successful in-flight payload release
-
-## Lessons Learned
-
-The payload system influenced fuselage dimensions, structure, servo placement, avionics packaging, center of gravity, and service access. It had to be designed as part of the aircraft architecture rather than as a late-stage subsystem.
-
-A future iteration would include earlier full-mass deployment testing, formal vibration testing of critical hardware, and continuous center-of-gravity tracking throughout fabrication.
+It also demonstrated the limitations of validating mechanisms only through kinematic analysis and bench testing. Future development would include earlier full-mass deployment testing, formal vibration testing of critical hardware, and continuous center-of-gravity tracking throughout fabrication.
 
 ## Flight Video
 

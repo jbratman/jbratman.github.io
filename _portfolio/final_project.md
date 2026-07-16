@@ -28,6 +28,7 @@ tools:
   - ROS2
   - Python
   - C++
+  - Jetson Nano
   - OAK-D Lite
   - DepthAI
   - Arduino
@@ -37,6 +38,8 @@ skills:
   - Perception Integration
   - State Machines
   - Mechanical Packaging
+
+process_heading: "From behavior requirements to an integrated autonomous vehicle"
 
 process:
   - title: "Behavior Definition"
@@ -51,6 +54,8 @@ process:
     detail: "Resolved timing, interface, and real-time control issues."
   - title: "Demonstration"
     detail: "Validated person following, marker response, and status feedback."
+
+results_heading: "Validated through system integration and demonstration"
 
 results:
   - value: "≈6 m"
@@ -104,17 +109,58 @@ The project required perception, autonomy, controls, embedded feedback, and mech
 
 ## System Behavior
 
-The OAK-D Lite camera provided RGB and depth data for person detection and tracking.
+The vehicle used explicit states to separate search, person following, marker evaluation, and response behaviors. This made transitions observable and allowed perception and motion logic to be tested independently.
+
+<div class="system-flow" aria-label="Autonomous vehicle behavior sequence">
+  <div class="system-flow__step">
+    <span class="system-flow__number">01</span>
+    <strong>Search</strong>
+    <span>Patrol the operating area while waiting for a person detection.</span>
+  </div>
+  <div class="system-flow__arrow" aria-hidden="true">→</div>
+  <div class="system-flow__step">
+    <span class="system-flow__number">02</span>
+    <strong>Detect</strong>
+    <span>Identify a person and estimate their relative position using RGB and depth.</span>
+  </div>
+  <div class="system-flow__arrow" aria-hidden="true">→</div>
+  <div class="system-flow__step">
+    <span class="system-flow__number">03</span>
+    <strong>Follow</strong>
+    <span>Adjust steering and speed to track the detected person.</span>
+  </div>
+  <div class="system-flow__arrow" aria-hidden="true">→</div>
+  <div class="system-flow__step">
+    <span class="system-flow__number">04</span>
+    <strong>Evaluate</strong>
+    <span>Read the presented ArUco marker and select the next behavior.</span>
+  </div>
+  <div class="system-flow__arrow" aria-hidden="true">→</div>
+  <div class="system-flow__step">
+    <span class="system-flow__number">05</span>
+    <strong>Respond</strong>
+    <span>Execute the valid-marker maneuver or continue following after rejection.</span>
+  </div>
+</div>
+
+The OAK-D Lite camera provided RGB and stereo-depth data for person detection, spatial tracking, and marker recognition.
 
 When an ArUco marker was presented:
 
-- a valid marker triggered a green status indication
-- the vehicle stopped
-- the vehicle reversed
-- the vehicle executed a U-turn
-- the vehicle resumed autonomous search behavior
+- a valid marker triggered a green status indication, stopped the vehicle, initiated a reverse and U-turn maneuver, and returned the system to autonomous search
+- an invalid marker triggered a red status indication and the vehicle continued following the person
+- the waiting state was displayed in blue before a marker decision was available
 
-An invalid marker triggered a red status indication and the vehicle continued following the person.
+<div class="video-wrapper">
+  <iframe
+    src="https://www.youtube.com/embed/hA4WmpDeQwc?mute=1"
+    title="LCD and ArUco marker verification test"
+    allow="encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+*ArUco verification test showing the human-readable LCD feedback used for waiting, valid, and invalid marker states.*
 
 <div class="engineering-decision">
   <p class="engineering-decision__label">Engineering Decision</p>
@@ -124,34 +170,99 @@ An invalid marker triggered a red status indication and the vehicle continued fo
 
 ## System Architecture
 
-The architecture separated:
+The software architecture separated perception, behavior selection, vehicle control, and embedded feedback through defined ROS2 and serial interfaces.
 
-- person detection
-- depth-based tracking
-- ArUco marker detection
-- behavior state
-- vehicle motion control
-- LCD feedback
-- mechanical and electrical hardware
+<div class="system-flow" aria-label="Autonomous vehicle system architecture">
+  <div class="system-flow__step">
+    <span class="system-flow__number">01</span>
+    <strong>Perception</strong>
+    <span>OAK-D RGB, stereo depth, MobileNet-SSD, and ArUco recognition.</span>
+  </div>
+  <div class="system-flow__arrow" aria-hidden="true">→</div>
+  <div class="system-flow__step">
+    <span class="system-flow__number">02</span>
+    <strong>ROS2 Data</strong>
+    <span>Person and marker information published through defined topics.</span>
+  </div>
+  <div class="system-flow__arrow" aria-hidden="true">→</div>
+  <div class="system-flow__step">
+    <span class="system-flow__number">03</span>
+    <strong>Behavior</strong>
+    <span>State logic selected search, follow, and marker-response modes.</span>
+  </div>
+  <div class="system-flow__arrow" aria-hidden="true">→</div>
+  <div class="system-flow__step">
+    <span class="system-flow__number">04</span>
+    <strong>Control</strong>
+    <span>Velocity commands adjusted vehicle steering and throttle.</span>
+  </div>
+  <div class="system-flow__arrow" aria-hidden="true">→</div>
+  <div class="system-flow__step">
+    <span class="system-flow__number">05</span>
+    <strong>Feedback</strong>
+    <span>Serial commands drove the Arduino-controlled LCD state.</span>
+  </div>
+</div>
 
-This allowed team members to develop perception components independently while maintaining defined interfaces for integration.
+The primary ROS2 interfaces included `/person_detection`, `/aruco_markers`, and `/cmd_vel`. The Arduino received `waiting`, `yes`, and `no` serial messages to update the LCD independently from the vehicle motion controller.
+
+> **System-level implication:** Defined interfaces allowed perception, decision logic, vehicle control, and feedback to be developed separately while still providing observable signals for integration and debugging.
+
+## Perception and Tracking
+
+The DepthAI pipeline combined the OAK-D color camera, mono cameras, stereo-depth processing, and MobileNet-SSD spatial detection. This allowed the vehicle to identify a person, estimate their three-dimensional position, and adjust steering and speed using both image location and depth.
+
+During testing, the integrated system detected and tracked people at distances up to approximately six meters. ArUco markers from the `DICT_4X4_50` dictionary provided the visual identification input used by the behavior state machine.
 
 ## Mechanical Integration
 
-I served as the primary CAD designer and packaged:
+As the primary CAD designer, I developed the mounting system for:
 
 - OAK-D Lite camera
-- compute hardware
-- control electronics
+- Jetson Nano and DC-DC converter
+- combined camera and lidar hardware
 - Arduino and LCD hardware
-- structural mounts
-- vehicle interfaces
+- main structural plate and vehicle interfaces
 
 Mechanical layout had to preserve camera visibility, protect electronics, and remain accessible for debugging.
 
+<div class="project-gallery__grid">
+  <figure class="project-gallery__item">
+    <img src="{{ '/images/148_final_project/IMG1-main_mounting_plate.png' | relative_url }}" alt="Main mounting plate CAD model">
+    <figcaption><strong>Main Mounting Plate</strong><span>Primary structural interface for the vehicle hardware.</span></figcaption>
+  </figure>
+  <figure class="project-gallery__item">
+    <img src="{{ '/images/148_final_project/Jetson_Mount.png' | relative_url }}" alt="Jetson Nano and power electronics mount">
+    <figcaption><strong>Compute and Power Mount</strong><span>Packaged the Jetson Nano and power-conversion hardware.</span></figcaption>
+  </figure>
+  <figure class="project-gallery__item project-gallery__item--contain">
+    <img src="{{ '/images/148_final_project/IMG2-combined_lidar_camera_mount.png' | relative_url }}" alt="Combined camera and lidar mount CAD model">
+    <figcaption><strong>Combined Sensor Mount</strong><span>Maintained the relative position of the forward perception hardware.</span></figcaption>
+  </figure>
+  <figure class="project-gallery__item project-gallery__item--contain">
+    <img src="{{ '/images/148_final_project/IMG4-LCD_mount.png' | relative_url }}" alt="LCD status display mount CAD model">
+    <figcaption><strong>LCD Mount</strong><span>Positioned the human-facing status display for visibility and service access.</span></figcaption>
+  </figure>
+</div>
+
+## Electrical and Feedback Integration
+
+The Jetson Nano handled the primary perception and autonomy workload, while the Arduino Nano provided a dedicated interface for the LCD status display. Separating feedback from the primary motion-control path made system state visible without coupling display behavior directly into the vehicle controller.
+
+<div class="project-gallery__grid">
+  <figure class="project-gallery__item project-gallery__item--contain">
+    <img src="{{ '/images/148_final_project/wiring_diagram.png' | relative_url }}" alt="Electrical wiring diagram for the autonomous vehicle">
+    <figcaption><strong>System Wiring</strong><span>Electrical interfaces between compute, embedded feedback, sensing, and vehicle hardware.</span></figcaption>
+  </figure>
+  <figure class="project-gallery__item project-gallery__item--contain">
+    <img src="{{ '/images/148_final_project/arduino.png' | relative_url }}" alt="Arduino Nano and LCD wiring">
+    <figcaption><strong>Embedded Feedback</strong><span>Arduino-controlled interface used to display marker-verification status.</span></figcaption>
+  </figure>
+</div>
+
 ## Integration and Debugging
 
-I coordinated the interfaces between perception, autonomy, and actuation code.
+I coordinated the interfaces between perception, autonomy, actuation, and embedded-feedback code. Because the subsystems were developed by different team members, system-level debugging depended on verifying both the data passed between modules and the timing of each transition.
 
 System-level testing focused on:
 
@@ -162,34 +273,50 @@ System-level testing focused on:
 - communication between software and embedded feedback
 - consistency across repeated demonstrations
 
-## My Contributions
+### Initial Integrated Behavior Test
 
-- designed the high-level system architecture
-- implemented vehicle control and drive logic
-- developed state-based autonomy behavior
-- integrated person detection and ArUco detection
-- served as primary CAD designer
-- packaged sensors and compute hardware
-- coordinated subsystem interfaces
-- led system debugging and final integration
-- supported planning and technical decisions
+<div class="video-wrapper">
+  <iframe
+    src="https://www.youtube.com/embed/1Sczadr2QxU?mute=1"
+    title="Initial person detection and search behavior test"
+    allow="encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
-## Results
+*Initial integrated test showing person detection, vehicle response, and the transition back to searching for another person.*
 
-The final system demonstrated:
+## Final Validation
 
-- real-time person detection and tracking
-- tracking distances up to approximately 6 meters
-- marker detection using the `DICT_4X4_50` dictionary
-- state-based motion responses
-- dynamic steering and speed adjustment
-- LCD status feedback
-- successful integrated final behavior
+The final demonstration connected the full perception-to-actuation pipeline: person detection, depth-based following, marker evaluation, state transitions, vehicle motion, and LCD feedback.
 
-## Stretch Goals
+<div class="video-wrapper">
+  <iframe
+    src="https://www.youtube.com/embed/NoUrJJRty2U?mute=1"
+    title="Final person detection and redetection demonstration"
+    allow="encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
-GPS waypoint navigation and enhanced obstacle avoidance were considered as future extensions. They were not fully implemented because of project scope, integration complexity, and schedule constraints.
+*Final integrated demonstration showing person detection, autonomous response, and successful redetection behavior on the completed vehicle.*
 
-## Lessons Learned
+## Engineering Outcomes
 
-The project reinforced the importance of clearly defined subsystem interfaces. Integration became much easier when perception, decision logic, motion control, and feedback were treated as separate modules with explicit inputs and outputs.
+The completed vehicle demonstrated real-time person detection and depth-based following at distances up to approximately six meters. ArUco markers triggered state-dependent motion responses and corresponding LCD feedback, allowing the complete autonomy pipeline to be demonstrated as an integrated system.
+
+Separating perception, decision logic, vehicle control, and feedback into defined interfaces allowed independently developed team components to be tested individually and then combined into the final behavior.
+
+## Engineering Perspective
+
+This project reinforced that reliable autonomy depends on clearly defined subsystem interfaces. Integration became significantly easier when perception, decision logic, vehicle control, and feedback were treated as separate modules with explicit inputs, outputs, and expected timing.
+
+It also demonstrated the value of explicit state-based behavior. Observable states made transitions easier to test, allowed failures to be isolated more quickly, and provided a clearer framework for coordinating independently developed team components.
+
+GPS waypoint navigation and enhanced obstacle avoidance were deferred so the team could prioritize robust person following, marker recognition, and state-based response within the project schedule.
+
+## Project Documentation
+
+The complete team repository contains the source code, CAD documentation, electrical integration details, and additional project media.
+
+[View the ECE/MAE 148 Team 7 project repository on GitHub](https://github.com/UCSD-ECEMAE-148/fall-2024-final-project-team-7)

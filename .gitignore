@@ -20,3 +20,6 @@ package-lock.json
 .vscode/
 
 Thumbs.db
+
+# Jekyll incremental-build metadata
+.jekyll-metadata
