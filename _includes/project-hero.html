@@ -4,6 +4,12 @@
       class="project-hero__media"
       style="background-image: url('{{ page.hero_image | relative_url }}');"
       aria-hidden="true">
+      <img
+        class="project-hero__mobile-image{% if page.hero_mobile_fit == 'contain' %} project-hero__mobile-image--contain{% endif %}"
+        src="{{ page.hero_image | relative_url }}"
+        alt=""
+        style="object-position: {{ page.hero_mobile_position | default: 'center center' }};"
+        loading="eager">
     </div>
   {% endif %}
 

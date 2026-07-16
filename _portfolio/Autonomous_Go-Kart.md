@@ -8,6 +8,7 @@ permalink: /Autonomous_Go-Kart/
 
 project_type: "Autonomous Systems · Mechanical Integration"
 hero_image: /images/go_kart/1750071646128.jpg
+hero_mobile_position: "center 58%"
 hero_summary: >-
   Led the mechanical development of an autonomous electric go-kart, improving
   braking response, electrical reliability, battery retention, packaging, and

@@ -8,6 +8,7 @@ permalink: /payload_deliv/
 
 project_type: "Aerospace Engineering · Senior Capstone"
 hero_image: /images/delivery_plane/DSC_0420.jpg
+hero_mobile_position: "70% center"
 hero_summary: >-
   Senior aerospace capstone focused on designing and flight-validating a
   competition aircraft with an integrated in-flight payload deployment system.

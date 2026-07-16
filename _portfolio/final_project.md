@@ -8,6 +8,7 @@ permalink: /final_project/
 
 project_type: "Robotics · Autonomous Systems"
 hero_image: /images/148_final_project/complete_car.JPG
+hero_mobile_position: "center 42%"
 hero_summary: >-
   Integrated perception, decision logic, vehicle control, mechanical packaging,
   and human-facing feedback into a real-time autonomous ground vehicle.
