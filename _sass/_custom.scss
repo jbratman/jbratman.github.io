@@ -656,7 +656,11 @@ html { scroll-behavior: smooth; }
 }
 
 .rail-header { display: none; }
-.project-rail { position: relative; height: 455px; }
+.project-rail {
+  position: relative;
+  height: 455px;
+  touch-action: pan-y;
+}
 
 .rail-card {
   position: absolute;
@@ -971,9 +975,7 @@ html { scroll-behavior: smooth; }
 
 @media screen and (max-width: 760px) {
 
-  .landing-hero::after {
-    height: 170px;
-  }
+  .landing-hero::after { display: none; }
 
   .project-section {
     margin-top: -55px;
@@ -985,26 +987,63 @@ html { scroll-behavior: smooth; }
     width: calc(100% - 2rem);
   }
   .concept-nav__links a:not(:last-child) { display: none; }
-  .landing-hero h1 { font-size: clamp(3.5rem, 18vw, 5.5rem); }
-  .landing-subtitle { font-size: 1rem; }
-
   .landing-hero {
-    padding-top: 6rem;
-    padding-bottom: 26rem;
+    display: block;
+    min-height: auto;
+    padding: 7rem 0 0;
   }
 
   .landing-hero__copy {
     width: 100%;
+    max-width: none;
+    padding: 0 0 3.5rem;
+  }
+
+  .landing-hero h1 {
+    max-width: 9ch;
+    font-size: clamp(3.3rem, 14vw, 4.6rem);
+    line-height: .94;
+  }
+
+  .landing-subtitle {
+    max-width: 38rem;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .concept-button {
+    width: 100%;
+  }
+
+  .hero-background {
+    position: relative;
+    inset: auto;
+    width: calc(100% + 2rem);
+    height: min(62svh, 560px);
+    margin-left: -1rem;
   }
 
   .hero-background img {
-    object-position: 64% bottom;
+    object-position: center center;
+  }
+
+  .hero-background::before {
+    background: linear-gradient(
+      to bottom,
+      var(--concept-bg) 0%,
+      rgba(6, 16, 27, .12) 22%,
+      rgba(6, 16, 27, .08) 70%,
+      var(--concept-bg) 100%
+    );
   }
 
   .hero-background::after {
-    width: 100%;
-    height: 30%;
-    opacity: 0.12;
+    display: none;
   }
 
   .project-rail-wrap { min-height: 520px; }
