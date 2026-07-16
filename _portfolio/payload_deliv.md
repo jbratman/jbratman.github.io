@@ -1,441 +1,296 @@
 ---
-title: "Payload Delivery Plane (Col. Pollo J. Rosso) "
+layout: project-case-study
+title: "Payload Delivery Aircraft"
+subtitle: "Col. Pollo J. Rosso — RC aircraft and in-flight payload delivery system"
 date: 2025-06-15
 collection: portfolio
-tags: [CAD, Python, MATLAB]
-excerpt: |
-  **Overview**
-  - **System:** Team-based autonomous systems project developed for ECEMAE 148
-  - **Role:** Team member contributing to system integration, implementation, and testing
-  - **Tools:** ROS2, Python, C++, Git, embedded sensors and compute hardware
-  - **Outcome:** Demonstrated a functional autonomous system with documented architecture, testing results, and final presentation
-  
-header:
-  teaser: delivery_plane/DSC_0420.jpg
+permalink: /payload_deliv/
 
-attachments:
- - title: "Preliminary Design Review (FDR)"
-   pdf: /files/docs/payload_delivery/PDR_MJ5.pdf
-   pptx: /files/docs/payload_delivery/PDR_Presentation.pptx
- - title: "Final Design Review (FDR)" 
-   pdf: /files/docs/payload_delivery/FDR_MJ5.pdf
-   pptx: /files/docs/payload_delivery/FDR_Presentation.pptx
- - title: "Senior Day Poster"
-   pdf: /files/docs/payload_delivery/Team_3_MJ5_Poster_colored_fixedlogo.pdf   
+project_type: "Aerospace Engineering · Senior Capstone"
+hero_image: /images/delivery_plane/DSC_0420.jpg
+hero_summary: >-
+  Senior aerospace capstone focused on designing and flight-validating a
+  competition aircraft with an integrated in-flight payload deployment system.
 
- 
+intro_title: "A complete aircraft developed around an integrated payload mission"
+intro: >-
+  This project combined aircraft sizing, propulsion analysis, structural
+  fabrication, controls integration, mechanism design, and flight testing.
+  My primary ownership centered on the payload-delivery architecture,
+  four-bar door mechanism, structural integration, and build-test iteration.
+
+role: "Co-Lead Mechanical Design · Payload System · Fabrication · Flight Testing"
+timeline: "January–June 2025"
+team: "6 aerospace engineering seniors"
+organization: "UC San Diego"
+status: "Completed"
+
+tools:
+  - Fusion 360
+  - MATLAB
+  - Python
+  - 3D Printing
+  - Laser Cutting
+  - RC Aircraft Systems
+
+skills:
+  - Aircraft Design
+  - Payload Systems
+  - Mechanism Design
+  - Flight Test
+
+process_heading: "From requirements to validated flight hardware"
+
+process:
+  - title: "Requirements"
+    detail: "Defined payload, propulsion, safety, and mission constraints."
+  - title: "Sizing"
+    detail: "Established wing loading, thrust margin, cruise speed, and geometry."
+  - title: "Concept"
+    detail: "Selected high-wing architecture and integrated payload-bay layout."
+  - title: "Analysis"
+    detail: "Modeled propulsion and four-bar linkage motion."
+  - title: "Fabrication"
+    detail: "Built airframe, payload hardware, and avionics packaging."
+  - title: "Flight Test"
+    detail: "Validated, diagnosed failures, redesigned, and completed deployment."
+
+results_heading: "Validated through build and flight testing"
+
+results:
+  - value: "2.125 kg"
+    label: "Gross aircraft weight as flown"
+  - value: "20 m/s"
+    label: "Target cruise speed"
+  - value: "700 cm³"
+    label: "Volume payload capacity"
+  - value: "24% MAC"
+    label: "Loaded center-of-gravity location"
+  - value: "≈90°"
+    label: "Payload-door travel"
+  - value: "Flight Validated"
+    label: "Successful in-flight payload deployment"
+
+lead_image:
+  image: /images/delivery_plane/IMG_0004.JPG
+  alt: "UC San Diego MAE 155B team with the completed payload delivery aircraft"
+  caption: "UC San Diego MAE 155B Team MJ5 — Spring 2025"
+
+featured: true
+order: 1
+card_title: "Payload Delivery Aircraft"
+card_category: "Aircraft Design"
+card_image: /images/delivery_plane/DSC_0420.jpg
+card_summary: >-
+  Designed and flight-tested a competition aircraft with a custom four-bar
+  payload delivery mechanism.
+card_tags:
+  - Aircraft Design
+  - CAD
+  - Flight Testing
+  - Mechanisms
+
+project_links:
+  - label: "View Final Design Review"
+    url: /files/docs/payload_delivery/FDR_MJ5.pdf
+    primary: true
+  - label: "View Senior Day Poster"
+    url: /files/docs/payload_delivery/Team_3_MJ5_Poster_colored_fixedlogo.pdf
+
+documents:
+  - type: "Design Review"
+    title: "Preliminary Design Review"
+    description: "Early sizing, requirements, architecture, and risk assessment."
+    pdf: /files/docs/payload_delivery/PDR_MJ5.pdf
+    pptx: /files/docs/payload_delivery/PDR_Presentation.pptx
+  - type: "Design Review"
+    title: "Final Design Review"
+    description: "Final configuration, subsystem details, testing, and results."
+    pdf: /files/docs/payload_delivery/FDR_MJ5.pdf
+    pptx: /files/docs/payload_delivery/FDR_Presentation.pptx
+  - type: "Poster"
+    title: "Senior Day Poster"
+    description: "Condensed project summary presented at UC San Diego Senior Day."
+    pdf: /files/docs/payload_delivery/Team_3_MJ5_Poster_colored_fixedlogo.pdf
+
+next_project:
+  title: "Autonomous Racecar Updates"
+  url: /racecar/
 ---
-## Overview
-- **System:** Fixed-wing RC payload delivery aircraft (senior capstone)
-- **Role:** Co-lead mechanical design, payload mechanism, fabrication, flight testing
-- **Team:** 6 aerospace engineering seniors (UC San Diego)
-- **Tools:** Fusion 360, MATLAB, Python, rapid prototyping
-- **Outcome:** Fully built and flight-tested aircraft with successful in-flight payload deployment
 
-I led the mechanical design and integration of the payload delivery system, including a gear-driven four-bar linkage bomb bay designed for reliable in-flight deployment. I was also responsible for detailed CAD, fabrication of structural components, system integration, and hands-on flight testing and iteration.
+## The Challenge
 
-## Key Results
-- Successfully designed, built, and flight-tested a payload delivery aircraft
-- Achieved reliable in-flight payload deployment after mechanical iteration
-- Validated four-bar linkage bomb bay concept through bench and flight testing
-- Identified and corrected stability and vibration issues through test-driven redesign
+The competition required an electrically powered aircraft that could carry two payload classes, complete the prescribed flight course, and deploy a volume payload while airborne. The aircraft also had to pass an empty-weight validation flight before attempting the scored mission.
 
-<div class="lead-photo">
-  <figure>
-    <img src="/images/delivery_plane/IMG_0004.JPG">
-    <figcaption>UCSD MAE 155B team MJ<sup>5</sup>— Spring 2025</figcaption>
-  </figure>
+The key constraints were:
+
+- Package 1: lead weights with a minimum mass of 0.5 lb
+- Package 2: an empty cardboard box with a minimum volume of 500 cm³
+- Package 2 had to be deployed in flight
+- The aircraft had to use the assigned motor, ESC, battery, and receiver
+- The design had to remain safe, manufacturable, and repairable within the capstone schedule
+
+> **Engineering implication:** The payload system could not be treated as a secondary add-on. Its volume, mass, actuation loads, and service access directly affected the fuselage architecture and aircraft center of gravity.
+
+## Aircraft Architecture
+
+A high-wing configuration with approximately three degrees of dihedral was selected to support predictable handling and payload stability. The aircraft used a balsa wing, plywood fuselage, and lightweight empennage structure, with the payload systems positioned near the aircraft center of gravity.
+
+The final aircraft used:
+
+- NACA 4412 wing airfoil
+- NACA 0012 empennage airfoil
+- approximately 0.23 m² wing area
+- approximately 1.15 m wingspan
+- approximately 20 m/s cruise speed
+- approximately 10–11 m/s stall speed
+
+<div class="engineering-decision">
+  <p class="engineering-decision__label">Engineering Decision</p>
+  <p><strong>High-wing architecture over a faster, lower-drag configuration.</strong></p>
+  <p>The selected layout prioritized predictable low-speed handling, payload stability, fabrication access, and mission completion rather than maximum speed.</p>
 </div>
 
-## My Primary Engineering Responsibilities
-- Designed the payload bay architecture and four-bar door linkage
-- Modeled linkage kinematics and servo loading for reliable actuation
-- Designed and fabricated structural components for the fuselage and payload system
-- Led mechanical integration of servos, linkages, and avionics
-- Participated in ground testing, flight testing, and post-flight iteration
+## Sizing and Propulsion
 
-## Design Constraints and Competition Rules
-- Design, build, and successfully fly an aircraft that results in the highest possible flight score utilizing the given flight score
-- Aircraft must be electrically powered
-- Package 1 must be lead weights, minimum weight of 0.5 lb
-- Package 2 must be an empty cardboard box, minimum volume of 500 cm<sup>3</sup>
-- Package 2 must be deployed while in air
-- Must have a successful empty weight flight 
-- Before first flight aircraft needs to be approved and safe for flight
+Initial sizing used wing-loading and thrust-to-weight trade studies. The fixed propulsion package included a Cobra C-2217/16 1180 KV motor, 40 A ESC, 3S 1800 mAh LiPo battery, and FrSky X8R receiver.
 
+An APC 9×6E propeller was selected after comparing predicted thrust against the 8×6E alternative. At approximately 9,000 RPM, the 9×6E provided the required cruise thrust with practical margin.
 
+The propulsion analysis supported:
 
-## Component Restrictions 
-- Motor: Cobra C-2217 Brushless Kv=1180
-- Speed Controller: Flite Test 40 Amp ESC
-- Battery: Tattu 11.1V 1800mAh 3S 45C LiPo
-- Receiver: FrSky Taranis Receiver X8R 8 Channel 2.4 GHz
+- approximately 3 N cruise thrust requirement
+- approximately 10 N available static thrust
+- approximately 0.5 thrust-to-weight ratio as flown
+- short takeoff distance within the available test environment
 
-## Objective (Flight Score)
+## Payload Mechanism
 
-<div class="eq-box">
-  <div class="eq">
-\[
-J(x) =
-\frac{ r_{W_p}\, W_p(x) + r_{V_p}\, V_p(x) - c_e\, E_f(x) - c_c }{ T_f(x) }
-\;-\;
-\frac{ c_{W_g}\, W_g(x) }{ t_l }
-\;-\; c_f
-\]
-  </div>
+The volume payload was housed in a 3D-printed bomb-bay module integrated into the lower fuselage. The final mechanism used two micro-servos and a four-bar linkage to drive opposing cargo doors through approximately 90 degrees of rotation.
 
-  <div>
-<h4 class="subtle">Symbols &amp; Definitions</h4>
-<table class="params">
-  <thead>
-    <tr>
-      <th>Symbol</th>
-      <th>Definition</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>\(x\)</td><td>aircraft design (decision variables)</td></tr>
-    <tr><td>\(W_p(x)\)</td><td>package-1 weight</td></tr>
-    <tr><td>\(V_p(x)\)</td><td>package-2 volume</td></tr>
-    <tr><td>\(E_f(x)\)</td><td>energy consumption</td></tr>
-    <tr><td>\(W_g(x)\)</td><td>gross weight</td></tr>
-    <tr><td>\(T_f(x)\)</td><td>flight time</td></tr>
-    <tr><td>\(r_{W_p},\, r_{V_p}\)</td><td>revenue per unit weight / volume</td></tr>
-    <tr><td>\(c_e\)</td><td>cost per unit energy</td></tr>
-    <tr><td>\(c_c\)</td><td>cost per flight</td></tr>
-    <tr><td>\(c_{W_g}\)</td><td>cost per unit gross weight</td></tr>
-    <tr><td>\(c_f\)</td><td>fixed operating cost</td></tr>
-    <tr><td>\(t_l\)</td><td>total aircraft-life flight time</td></tr>
-  </tbody>
-</table>
-
-  <h4 class="subtle">Nominal values & units</h4>
-  <table class="params">
-    <thead>
-      <tr>
-        <th>Quantity</th><th>Symbol</th><th>Value</th><th>Units</th>
-        <th>SI value</th><th>SI units</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Revenue per unit payload weight</td><td>\(r_{W_p}\)</td><td>1</td><td>\([\$/\mathrm{lb}]\)</td><td>\(2.25\times10^{-1}\)</td><td>\([\$/\mathrm{N}]\)</td></tr>
-      <tr><td>Revenue per unit payload volume</td><td>\(r_{V_p}\)</td><td>300</td><td>\([\$/\mathrm{m}^3]\)</td><td>\(3.00\times10^{2}\)</td><td>\([\$/\mathrm{m}^3]\)</td></tr>
-      <tr><td>Cost per unit energy</td><td>\(c_e\)</td><td>0.3</td><td>\([\$/\mathrm{kWh}]\)</td><td>\(8.33\times10^{-8}\)</td><td>\([\$/\mathrm{J}]\)</td></tr>
-      <tr><td>Cost per flight (COC)</td><td>\(c_c\)</td><td>0.5</td><td>\([\$]\)</td><td>0.5</td><td>\([\$]\)</td></tr>
-      <tr><td>Cost per unit gross weight</td><td>\(c_{W_g}\)</td><td>300</td><td>\([\$/\mathrm{lb}]\)</td><td>\(6.74\times10^{1}\)</td><td>\([\$/\mathrm{N}]\)</td></tr>
-      <tr><td>Cost per unit flight-time (FOC)</td><td>\(c_f\)</td><td>0.2</td><td>\([\$/\mathrm{h}]\)</td><td>\(5.56\times10^{-5}\)</td><td>\([\$/\mathrm{s}]\)</td></tr>
-      <tr><td>Total flight time in aircraft life</td><td>\(t_l\)</td><td>1000</td><td>\([\mathrm{h}]\)</td><td>\(3.60\times10^{6}\)</td><td>\([\mathrm{s}]\)</td></tr>
-    </tbody>
-  </table>
-  </div>
-</div>
-
-
-## Development
-
-### Conceptual Design
-
-<div class="concept">
-
-  <!-- Design objective -->
-  <div class="concept__sub">
-    <p class="subhead">Design objective &amp; score</p>
-    <p>Maximize flight score based on payload revenue, energy &amp; operating costs, and time:</p>
-
-    <div class="eq-box">
-      <div class="eq">
-\[
-J(x) =
-\frac{ r_{W_p}\, W_p(x) + r_{V_p}\, V_p(x) - c_e\, E_f(x) - c_c }{ T_f(x) }
-\;-\;
-\frac{ c_{W_g}\, W_g(x) }{ t_l }
-\;-\; c_f
-\]
-      </div>
-    </div>
-
-    - Fixed parameters used: $r_{W_p}=1,\ r_{V_p}=300,\ c_e=0.3,\ c_c=0.5,\ c_{W_g}=300,\ c_f=0.2,\ t_l=1000$.
-  </div>
-
-  <!-- Key assumptions -->
-  <div class="concept__sub">
-    <p class="subhead">Key assumptions &amp; early sizing.</p>
-
-    <ul class="assumptions">
-      <li>Glide ratio:
-        <div class="assumption-value">$L/D \approx 8{-}13$</div>
-      </li>
-
-      <li>Electric battery specific energy:
-        <div class="assumption-value">$4.53\times10^{5}\ \mathrm{J/kg}$</div>
-        <div class="assumption-note">(from $11.1\,\mathrm{V},\ 1.8\,\mathrm{Ah},\ 0.1588\,\mathrm{kg}$)</div>
-      </li>
-
-      <li>Initial gross weight target:
-        <div class="assumption-value">$\approx 2\ \mathrm{kg}$</div>
-        <div class="assumption-note">Wing loading: $\approx 2.05\ \mathrm{lb/ft}^2$</div>
-      </li>
-
-      <li>Competition constraints:
-        <div class="assumption-value">$W_p \ge 0.5\ \mathrm{lb},\quad V_p \ge 500\ \mathrm{cm}^3$</div>
-      </li>
-
-      <li>Working goals:
-        <div class="assumption-value">$W_p = 1.5\ \mathrm{lb},\quad V_p = 0.5\ \mathrm{L}$ (min)</div>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Architecture -->
-  <div class="concept__sub">
-    <p class="subhead">Architecture &amp; materials.</p>
-    <ul>
-      <li>High-wing with dihedral for stability; simple planform for manufacturability.</li>
-      <li>Structure: balsa wing, plywood fuselage; control surfaces from dense foam.</li>
-      <li>5-servo layout: 2× aileron, 1× elevator, 1× rudder/nose-wheel, 1× drop mechanism.</li>
-      <li>Weight payload near CG; volume payload released via single 9 g servo.</li>
-    </ul>
-  </div>
-
-  <!-- Scoring insights -->
-  <div class="concept__sub">
-    <p class="subhead">Scoring strategy insights.</p>
-    <ul>
-      <li>Energy cost per mission is small (≈ $0.12$), so <strong>reducing flight time</strong> (higher cruise speed) boosts score materially.</li>
-      <li>Adequate wing loading for low takeoff/landing speeds; empty-weight fraction target $0.5\text{–}0.7$.</li>
-    </ul>
-  </div>
-
-  <!-- Electronics -->
-  <div class="concept__sub">
-    <p class="subhead">Fixed electronics &amp; selected components.</p>
-    <ul>
-      <li>Cobra C-2217/16 (Kv 1180) motor, 40 A ESC, 3S 1800 mAh LiPo, FrSky X8R, SG90 servos, standard linkages &amp; hardware.</li>
-    </ul>
-  </div>
-
-</div>
-
-### Preliminary Design
-
-<div class="concept">
-
-  <!-- Propulsion -->
-  <div class="concept__sub">
-    <p class="subhead">Propulsion &amp; propeller choice.</p>
-    <ul>
-      <li>Motor constraint: Cobra C2217/16, 11.1 V, Kv = 1180 → no-load speed ≈ <strong>13,098 RPM</strong>; usable band <strong>6,500–10,500 RPM</strong>.</li>
-      <li>APC <strong>8×6-E</strong> vs <strong>9×6-E</strong>: the 8×6-E is slightly more efficient, but cruise thrust needed ≈ <strong>3 N</strong>.
-        At <strong>9,000 RPM</strong> the <strong>9×6-E</strong> makes ≈ <strong>3.75 N</strong> while the 8×6-E makes ≈ <strong>2.66 N</strong>.</li>
-      <li><strong>Selected propeller: APC 9×6-E</strong> (meets cruise-thrust with margin at realistic RPM).</li>
-    </ul>
-  </div>
-
-  <!-- Airfoil -->
-  <div class="concept__sub">
-    <p class="subhead">Airfoil &amp; aerodynamic model.</p>
-    <ul>
-      <li>Analysis at $Re \approx 5\times10^{5}$; constraints: $t/c \le 12\%$ (servo fit), camber $\le 6\%$ (manufacturability/stability).</li>
-      <li>Candidates: Clark-Y, NACA 4415/0012/4412/2412 → <strong>NACA 4412</strong> chosen for higher L/D in the operating range.</li>
-      <li>2-D refs: $C_{L,\max}\approx1.52$, $C_{d,\min}\approx0.007$, $C_m\approx-0.10$ at low $\alpha$.</li>
-      <li>3-D correction gives $C_{L,\max}\approx1.36$ at $\alpha\approx13.25^\circ$ (spanwise correction from assignment method).</li>
-    </ul>
-  </div>
-
-  <!-- Performance -->
-  <div class="concept__sub">
-    <p class="subhead">Performance estimates (Initial).</p>
-    <ul>
-      <li>Takeoff model ($\mu_\text{roll}=0.03$): ground run $S_G \approx \,18\ \text{m}$; stall speed $V_\text{stall}\approx11\ \text{m/s}$.</li>
-      <li>Thrust-required vs. cruise speed: thrust at nominal cruise ≈ <strong>3 N</strong>; available thrust ~<strong>10 N</strong> → $V_{\max}\approx45\ \text{m/s}$.</li>
-      <li>Wing-loading carpet: optimum around <strong>100 N/m²</strong> for the sizing assumptions used.</li>
-    </ul>
-  </div>
-
-  <!-- Geometry -->
-  <div class="concept__sub">
-    <p class="subhead">Baseline geometry (working values).</p>
-    <ul>
-      <li>Wing area $S\approx0.23\ \text{m}^2$, span $b\approx1.15\ \text{m}$, chord $c\approx0.20\ \text{m}$ (basis for Re &amp; perf calcs).</li>
-    </ul>
-  </div>
-
-  <!-- Rationale -->
-  <div class="concept__sub">
-    <p class="subhead">Rationale.</p>
-    <p class="mb-0">
-      The prop choice prioritizes meeting cruise-thrust with margin in the 50–80 % RPM band,
-      while NACA 4412 offers strong L/D and gentle stall at your Reynolds number—both consistent
-      with minimizing flight time while keeping takeoff distance short.
-    </p>
-  </div>
-
-
-</div>
-
-### Detail Design & Fabrication
-
-<div class="concept">
-
-  <div class="concept__sub">
-    <p class="subhead">Payload architecture</p>
-    <ul>
-      <li><strong>Payload 1 (weights):</strong> plywood mount with removable slides; velcro retention; calibrated up to competition max</li>
-      <li><strong>Payload 2 (volume):</strong> 3D-printed bomb-bay with dual micro-servos and a <em>four-bar linkage</em> for ~90° door opening</li>
-      <li>Return springs preload doors to closed; linkage geometry biased to self-lock near closed to reduce idle servo load</li>
-    </ul>
-<h3 id="bay-door-design">Bay Door Design</h3>
-
-<figure>
-  <!-- Static CAD image -->
-  <img src="/images/delivery_plane/Delivery_Assembly_CAD.jpg"
-       alt="Bomb-bay four-bar linkage CAD">
-
-  <!-- Animated GIF (scaled down with CSS or width attribute) -->
-  <img src="/images/delivery_plane/fourbar_animation.gif"
-       alt="Four-bar linkage animation showing door motion"
-       class="media-img small-gif">
-
-  <!-- Video 1 -->
-  <video autoplay muted loop playsinline class="media-video">
-    <source src="/videos/delivery_plane/20250521_174541.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
+<figure class="project-figure project-figure--wide">
+  <img
+    src="{{ '/images/delivery_plane/Delivery_Assembly_CAD.jpg' | relative_url }}"
+    alt="CAD model of the payload bay, opposing cargo doors, servos, and four-bar linkage"
+    loading="lazy">
   <figcaption>
-    Four-bar door geometry—quick open at small servo rotation, stable closure at neutral.
+    Payload-bay CAD showing the opposing cargo doors, dual micro-servos, and
+    four-bar linkage integrated into the lower fuselage structure.
   </figcaption>
 </figure>
-  </div>
 
-  <div class="concept__sub">
-    <p class="subhead">Airframe &amp; controls</p>
-    <ul>
-      <li><strong>Wing:</strong> balsa ribs with ply center section; semi-monocoque leading edge; 3° dihedral</li>
-      <li><strong>Ailerons:</strong> span ~40% of wing, chord ~20% of local; ±30° travel</li>
-      <li><strong>Fuselage:</strong> 2 mm ply primary structure; wing hooks + carbon tubes with rubber-band retention</li>
-      <li><strong>Empennage:</strong> foam-core V-stab with CF spar + balsa/monokote; balsa H-stab</li>
-      <li><strong>Taildragger gear:</strong> main gear bent for higher rotation; tailwheel on 3D-printed pivot aligned to rudder hinge (single-servo steering)</li>
-      <li><strong>Pushrods:</strong> routed in plastic guide tubes to prevent interference and reduce column buckling</li>
-    </ul>
-  </div>
-
-  <div class="concept__sub">
-    <p class="subhead">Propulsion &amp; alignment</p>
-    <ul>
-      <li>3D-printed thrust-line shim: **~+2° right, ~+3° down**; plywood standoff shifts motor ~15 mm forward for CG</li>
-      <li>Avionics bay: Cobra C-2217/16, 40 A ESC, inline watt-meter, 3S 1800 mAh LiPo, FrSky X8R</li>
-    </ul>
-    <div class="inline-figs">
-      <img src="/images/delivery_plane/motor_extension_and_shim.jpg" alt="Motor thrust-line shim">
-    </div>
-    <figcaption>
-    Angled motor mount shim and motor extension 
-    </figcaption>
-  </div>
-
-  <div class="concept__sub">
-    <p class="subhead">Fabrication notes</p>
-    <ul>
-      <li>Printed parts: nose cone, spinner, thrust-line shim, tailwheel pivot, bomb-bay frame/doors</li>
-      <li>Covering: monokote on wing/empennage; quick field repairable</li>
-      <li>Assembly tips:
-        <ul>
-          <li>Dry-fit bomb-bay module and doors before covering to verify clearances</li>
-          <li>Tune horn radius/link length to avoid end-point binding at ±30° throws</li>
-          <li>Set spring preload so doors close without holding torque</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <div class="concept__sub">
-    <p class="subhead">Specs (as-flown)</p>
-    <table class="params">
-      <thead><tr><th>Item</th><th>Value</th></tr></thead>
-      <tbody>
-        <tr><td>Empty / Gross</td><td>~1.4 kg / ~2.125 kg</td></tr>
-        <tr><td>Payload 1 (weights)</td><td>~0.68 kg</td></tr>
-        <tr><td>Payload 2 (volume)</td><td>~700 cm³</td></tr>
-        <tr><td>Thrust-to-weight</td><td>~0.5</td></tr>
-        <tr><td>Cruise speed</td><td>~20 m/s</td></tr>
-        <tr><td>CG (empty / P1+P2)</td><td>~24.7% / ~24.0% MAC</td></tr>
-        <tr><td>Neutral point / SM</td><td>~58% MAC / ~17%</td></tr>
-        <tr><td>Stall / Takeoff / Climb</td><td>~10–11 m/s / ~15 m / ~15°</td></tr>
-        <tr><td>Airfoils</td><td>NACA 4412 (wing), NACA 0012 (empennage)</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="concept__sub">
-    <p class="subhead">Test Flight &amp; Results</p>
-    <ul>
-      <li>Initial flight revealed nose cone mass imbalance, leading to its removal to restore stability </li>
-      <li>Early configuration exhibited an aft center of gravity (~60% chord), prompting tail mass reduction and forward motor relocation to return CG to the 25–33% chord range.</li>
-      <li>Payload delivery system could not be evaluated during the first flight due to a servo mount failure, informing a redesigned and reinforced mounting approach.</li>
-      <li>Motor vibrations during early testing caused fasteners to back out, resulting in motor detachment during landing; hardware was subsequently secured using threadlocker.</li>
-      <li>Rubber-band wing retention system performed reliably under flight loads when properly backed by carbon-fiber tubes.</li>
-    </ul>
-  </div>
-
-  <div class="concept__sub">
-    <p class="subhead">Lessons learned</p>
-    <ul>
-      <li>Rebuild tail assembly to be lighter weight. Done by changing from foam elevators and rudder to balsa wood semi-monocoque</li>
-      <li>Extended motor further out from fusealage to help counter the tail weight. Mount extension also had space for more weight to be added to assist further</li>
-      <li>Motor mounting hardware was secured utilizing LOCTITE threadlocker</li>
-      <li>Delivery system mount was rebuilt with updated mounts that were stronger and less prone to breakage</li>
-
-    </ul>
-  </div>
-
-</div>
-
-## Reports and Presentations
-{% if page.attachments and page.attachments.size > 0 %}
-<div class="doc-grid">
-{% for d in page.attachments %}
-  <div class="doc-card">
-    <h4>{{ d.title }}</h4>
-  
-    <p class="doc-actions">
-      {% if d.pdf %}
-        <a class="btn doc-btn"
-           href="{{ d.pdf | relative_url }}"
-           target="_blank" rel="noopener">View PDF</a>
-      {% endif %}
-
-       {% if d.pptx %}
-        <a class="btn doc-btn"
-          href="{{ d.pptx | relative_url }}"
-          target="_blank" rel="noopener">Download PPTX</a>
-        {% if jekyll.environment == "production" %}
-          <a class="btn doc-btn"
-            href="https://view.officeapps.live.com/op/view.aspx?src={{ d.pptx | absolute_url | uri_escape }}"
-            target="_blank" rel="noopener">Open PPTX Online</a>
-        {% endif %}
-      {% endif %}
+<div class="engineering-decision">
+  <p class="engineering-decision__label">Engineering Decision</p>
+  <p><strong>Use a four-bar linkage with a near-locked closed geometry.</strong></p>
+  <p>
+    The selected linkage reduced continuous servo holding load, improved
+    packaging efficiency, and helped the cargo doors remain secure under
+    vibration and aerodynamic loading.
   </p>
-  </div>
-{% endfor %}
 </div>
-{% else %}
-<p><em>No documents uploaded yet.</em></p>
-{% endif %}
+
+### Linkage Analysis
+
+I developed a MATLAB model to evaluate servo rotation, linkage position, and cargo-door travel before fabrication. This allowed the team to compare geometry options and identify binding or insufficient travel before manufacturing hardware.
+
+<figure class="project-figure project-figure--animation">
+  <img
+    src="{{ '/images/delivery_plane/fourbar_animation.gif' | relative_url }}"
+    alt="MATLAB four-bar linkage simulation showing the payload-door motion"
+    loading="lazy">
+  <figcaption>
+    MATLAB linkage simulation used to evaluate servo input, crank rotation,
+    and cargo-door travel before fabrication.
+  </figcaption>
+</figure>
+
+### Bench-Test Controls
+
+A Python Tkinter interface was used during bench testing to command the deployment servos and repeatedly cycle the mechanism. This simplified troubleshooting before integration into the aircraft radio-control architecture.
+
+<figure class="project-figure project-figure--medium">
+  <video
+    controls
+    muted
+    loop
+    playsinline
+    preload="metadata">
+    <source
+      src="{{ '/videos/delivery_plane/20250521_174541.mp4' | relative_url }}"
+      type="video/mp4">
+    Your browser does not support embedded video.
+  </video>
+  <figcaption>
+    Integrated payload mechanism undergoing repeated bench testing before
+    installation of the final radio-control interface.
+  </figcaption>
+</figure>
+
+## Structural Integration and Fabrication
+
+The airframe used a balsa wing with a plywood center section and a 2 mm plywood fuselage. Printed parts included the payload bay, cargo doors, thrust-line shim, tailwheel pivot, spinner, and nose components.
+
+My fabrication and integration work included:
+
+- payload-bay architecture and packaging
+- four-bar linkage design
+- servo and linkage mounting
+- fuselage structural components
+- avionics packaging
+- motor-position and thrust-line adjustments
+- ground-test and flight-test support
+
+## Flight Testing and Iteration
+
+The first flights exposed integration issues that were not fully apparent during bench testing.
+
+### Flight 1 — Problems Identified
+
+- aft center of gravity
+- motor vibration and fastener loosening
+- payload-servo mount failure
+- excess tail mass
+
+### Iteration
+
+- moved the motor approximately 15 mm forward
+- rebuilt the tail with lighter balsa construction
+- secured critical fasteners with threadlocker
+- redesigned and reinforced the servo mount
+
+<figure class="project-figure project-figure--medium">
+  <img
+    src="{{ '/images/delivery_plane/motor_extension_and_shim.jpg' | relative_url }}"
+    alt="Motor extension and angled thrust-line shim installed on the aircraft"
+    loading="lazy">
+  <figcaption>
+    Plywood motor extension and 3D-printed thrust-line shim used to move the
+    motor approximately 15 mm forward while introducing right and down thrust.
+    The change helped correct the aft center of gravity and improve power-on
+    behavior.
+  </figcaption>
+</figure>
+
+### Flight 2 — Validation
+
+The revised aircraft demonstrated improved stability, reliable payload-door operation, and successful in-flight payload release.
+
+> **Test lesson:** Kinematic motion alone was not sufficient validation. The mechanism also had to survive vibration, fastener loosening, structural deflection, and repeated actuation under installed conditions.
 
 
-## Gallery
+## Engineering Perspective
 
-### Flight Videos
-#### Light Payload and Successful Package Drop
+This project reinforced that the payload system could not be developed independently from the rest of the aircraft. Its dimensions, mass, linkage geometry, servo placement, structural loads, and service requirements directly influenced the fuselage architecture, avionics packaging, and aircraft center of gravity.
+
+It also demonstrated the limitations of validating mechanisms only through kinematic analysis and bench testing. Future development would include earlier full-mass deployment testing, formal vibration testing of critical hardware, and continuous center-of-gravity tracking throughout fabrication.
+
+## Flight Video
+
 <div class="video-wrapper">
   <iframe
-    src="https://www.youtube.com/embed/oGGQHPh8Jqk?autoplay=1&mute=1&loop=1&playlist=oGGQHPh8Jqk"
-    title="Light payload and successful package drop"
-    frameborder="0"
-    allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+    src="https://www.youtube.com/embed/oGGQHPh8Jqk"
+    title="Payload delivery aircraft successful package drop"
+    allow="encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
   </iframe>
 </div>
-
-### Images

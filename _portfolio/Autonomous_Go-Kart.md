@@ -1,96 +1,310 @@
 ---
-title: "Triton AI Autonomous Go-Kart"
-date: 2025-6-15
+layout: project-case-study
+title: "Autonomous Go-Kart"
+subtitle: "Mechanical integration and subsystem development for an autonomous racing platform"
+date: 2025-06-15
 collection: portfolio
-tags: [CAD, MATLAB]
-excerpt: |
-  **Overview**
-  - **System:** Autonomous go-kart platform for student racing autonomy
-  - **Role:** Mechanical Lead
-  - **Tools:** CAD, MATLAB, rapid prototyping
-  - **Outcome:** Designed and tested mechanical subsystems supporting autonomy development and on-track validation
+permalink: /Autonomous_Go-Kart/
 
-header:
-  teaser: go_kart/1750071646128.jpg
+project_type: "Autonomous Systems · Mechanical Integration"
+hero_image: /images/go_kart/1750071646128.jpg
+hero_summary: >-
+  Led the mechanical development of an autonomous electric go-kart, improving
+  braking response, electrical reliability, battery retention, packaging, and
+  serviceability for repeated on-track testing.
+
+intro_title: "Engineering Reliable Hardware for Autonomous Racing"
+intro: >-
+  The kart combined perception, controls, actuation, power electronics, and
+  mechanical hardware within an existing racing chassis. My work focused on
+  translating autonomy requirements into durable, serviceable hardware that
+  could survive vibration, shock, thermal loading, and active test cycles.
+
+role: "Mechanical Lead"
+timeline: "November 2024–August 2025"
+team: "Triton AI student engineering team"
+organization: "UC San Diego · Triton AI"
+status: "Completed"
+
+tools:
+  - CAD
+  - MATLAB
+  - Python
+  - Rapid Prototyping
+  - Fabrication
+  - Track Testing
+
+skills:
+  - Mechanical Design
+  - Systems Integration
+  - Brake Analysis
+  - Electrical Packaging
+
+process_heading: "From system constraints to track-validated vehicle hardware"
+
+process:
+  - title: "Requirements"
+    detail: "Defined mounting, thermal, braking, retention, and serviceability needs."
+  - title: "Baseline Review"
+    detail: "Inspected existing hardware, failures, packaging limits, and test constraints."
+  - title: "Analysis"
+    detail: "Modeled brake kinematics, force transmission, and subsystem tradeoffs."
+  - title: "Design"
+    detail: "Developed mounts, enclosures, retention hardware, and packaging layouts."
+  - title: "Fabrication"
+    detail: "Built and installed revised mechanical hardware for testing."
+  - title: "Track Validation"
+    detail: "Evaluated durability, serviceability, thermal behavior, and control response."
+
+results_heading: "Validated through build and track testing"
+
+results:
+  - value: "≈1:1"
+    label: "Revised actuator-to-brake response"
+  - value: ">25%"
+    label: "Initial actuator stroke lost before meaningful brake response"
+  - value: "Track Tested"
+    label: "Subsystems validated under vibration and shock"
+  - value: "No Repeat"
+    label: "Thermal shutdown recurrence after enclosure redesign"
+  - value: "Improved"
+    label: "Battery retention and service access"
+  - value: "Integrated"
+    label: "Mechanical support for autonomy development"
+
+featured: true
+order: 2
+card_title: "Autonomous Go-Kart"
+card_category: "Mechanical Integration"
+card_image: /images/go_kart/1750071646128.jpg
+card_summary: >-
+  Led the mechanical development of Triton AI's autonomous go-kart.
+card_tags:
+  - Mechanical Design
+  - Systems Integration
+  - Autonomy
+
+previous_project:
+  title: "Payload Delivery Aircraft"
+  url: /payload_deliv/
+next_project:
+  title: "OpenSauce 2025"
+  url: /openSauce/
 ---
 
-## Overview
-- **System:** Autonomous go-kart platform for student racing autonomy
-- **Role:** Mechanical Lead
-- **Tools:** CAD, MATLAB, rapid prototyping
-- **Outcome:** Designed and tested mechanical subsystems supporting autonomy development and on-track validation
+## The Challenge
 
-## My Primary Engineering Responsibilities
-- Led mechanical design and integration for the autonomous go-kart platform
-- Designed and fabricated mounts for sensors, compute hardware, and wiring
-- Ensured structural integrity and serviceability under vibration and track loads
-- Supported autonomy and controls teams through hardware iteration and testing
-- Participated in on-track testing to validate mechanical robustness
+Triton AI is developing an autonomous electric go-kart to compete in the Autonomous Karting Series, where success depended on completing fast, consistent, and reliable autonomous laps. During the previous season, the team demonstrated race-winning pace but recurring mechanical and thermal reliability issues prevented the vehicle from consistently finishing events, ultimately resulting in a second-place overall finish.
 
-## Engineering Constraints & Environment
-- High vibration and shock loads during on-track operation
-- Limited mounting locations within an existing kart chassis
-- Rapid iteration requirements during active testing periods
-- Need for quick access and serviceability of sensors and compute hardware
-- Close coupling between mechanical layout and autonomy sensor performance
+Entering the new season, improving reliability became just as important as improving autonomous performance. As Mechanical Lead, I was responsible for designing, integrating, and validating the vehicle's mechanical subsystems to support reliable autonomous operation.
 
-## Build, Test, Iterate
-- Fabricated and installed sensor and compute mounts for track testing
-- Evaluated hardware durability during repeated on-track sessions
-- Identified vibration-related issues and refined mounting designs
-- Updated layouts to improve access, cable management, and serviceability
+My work included brake actuation, electrical packaging, battery retention, sensor integration, and overall vehicle integration within an existing racing chassis. Every design balanced performance, durability, serviceability, and manufacturability while supporting a team that was continuously iterating on both hardware and software.
 
-## Subsystem Design & Analysis
-### Brake System Analysis Tool (Python GUI)
+### Key Engineering Constraints
 
-I developed a Python-based GUI to analyze the kinematic relationship between a linear actuator and the brake master cylinder after identifying inconsistent and poorly documented brake performance across prior configurations.
+- Existing chassis geometry severely limited available mounting locations.
+- Hardware needed to survive continuous vibration, impacts, and repeated track sessions.
+- Sensor placement directly affected perception accuracy and autonomous performance.
+- High-current electrical components generated significant thermal loads that influenced enclosure design.
+- Components had to remain easily accessible for rapid maintenance and debugging between test sessions.
+- Hardware designs needed to accommodate frequent software-driven changes without requiring complete redesigns.
 
-Initial testing revealed that more than 25% of the actuator stroke was consumed before generating meaningful master cylinder response, resulting in a narrow and difficult-to-control braking window. The analysis tool allowed actuator mounting geometry to be varied interactively in order to evaluate stroke utilization, mechanical advantage, and resulting brake force output.
+> **Engineering implication:** Winning required more than advanced autonomy software. It requires maximizing productive testing time. Every hour spent repairing hardware, diagnosing thermal issues, or recalibrating sensors was an hour that couldn't be spent collecting data, validating software, or improving lap times. Reliable mechanical systems became a force multiplier for the entire engineering team.
 
-- Modeled actuator-driven crank geometry to map actuator displacement to master cylinder stroke
-- Quantified mechanical advantage and force transmission as a function of actuator mounting position
-- Verified actuator force output against prior capstone assessments to establish reasonable force targets
-- Identified suboptimal initial actuator placement that delayed brake engagement
-- Used the tool to relocate the actuator closer to the crank pivot, improving stroke utilization and control resolution
-- Collaborated with the controls team to demonstrate improved brake responsiveness, enabling more stable and predictable control calibration
+## Brake System Analysis & Optimization
 
-The revised geometry produced a response closer to a 1:1 actuator-to-brake relationship, significantly widening the usable control window and improving braking consistency prior to hardware testing.
+During autonomous testing, the brake system exhibited inconsistent response that made braking difficult to calibrate. Initial actuator movement produced little hydraulic pressure, compressing most of the available braking authority into a small portion of the actuator stroke. This limited braking resolution and reduced the controls team's ability to tune repeatable autonomous braking behavior.
 
-### Battery Box Design
+Rather than relying on trial-and-error modifications, I developed a custom Python analysis tool to model the complete brake system. The model simulated the relationship between linear actuator displacement, linkage geometry, master-cylinder stroke, hydraulic pressure, clamp force, and braking torque, allowing design changes to be evaluated before manufacturing new hardware.
 
-I developed and evaluated two battery enclosure concepts to securely mount the traction batteries within the go-kart chassis while balancing structural integrity, vehicle dynamics, and project constraints.
+<figure class="project-figure project-figure--analysis">
+  <img src="/images/go_kart/brake_gui.jpg" alt="Python brake analysis tool">
+  <figcaption>
+    Custom Python analysis tool developed to model linkage geometry, hydraulic pressure, clamp force, and braking torque while allowing rapid evaluation of alternative actuator positions.
+  </figcaption>
+</figure>
 
-The first concept retained the existing architecture, with batteries housed in the left and right side pods adjacent to the driver seat. This redesign focused on improving packaging and retention while maintaining compatibility with the current chassis layout.
+The analytical model was used to:
 
-The second concept proposed relocating the batteries to the seat region to centralize mass and improve the vehicle’s center of gravity. This configuration offered improved mass distribution and handling potential, with a future enclosure cover proposed to further enhance aerodynamic performance. This concept was ultimately not pursued due to program-level requirements to retain the traditional kart appearance for competition and demonstration purposes.
+- Map actuator displacement to master-cylinder travel.
+- Calculate changing mechanical advantage throughout the stroke.
+- Estimate hydraulic pressure, clamp force, and braking torque.
+- Compare alternate actuator mounting locations.
+- Quantify the effects of linkage geometry before fabrication.
 
-- Designed a revised side-pod battery mounting solution to withstand vibration, shock loads, and on-track dynamics  
-- Evaluated centralized battery placement to reduce CG offset and improve mass centralization  
-- Assessed structural retention, accessibility, and serviceability for both configurations  
-- Considered aerodynamic implications and future enclosure enhancements  
-- Balanced performance benefits against schedule, cost, and fabrication constraints  
+## Baseline Response
 
-Due to limited time and funding, the original side-pod battery configuration was retained for implementation. However, a universal automotive-style battery hold-down that I proposed was incorporated into the existing architecture, significantly improving battery retention and robustness under on-track vibration and dynamic loading.
+The initial analysis revealed that more than **25% of actuator travel** was consumed before meaningful master-cylinder displacement occurred. This dead-travel region compressed useful brake control into the remaining actuator stroke, making the system unnecessarily sensitive and difficult for the controls team to calibrate.
 
-### Electrical Housing Design
+<figure class="project-figure project-figure--medium">
+  <img src="/images/go_kart/Original_brake_response.jpg" alt="Original brake response">
+  <figcaption>
+    Initial brake response showing substantial actuator travel before hydraulic pressure increased, leaving a narrow region for useful brake modulation.
+  </figcaption>
+</figure>
 
-I redesigned the electrical housing and component layout after identifying a recurring thermal failure mode that had previously caused electrical shutdowns during competition testing.
+<div class="engineering-decision">
+  <p class="engineering-decision__label">Engineering Decision</p>
+  <p><strong>Relocate the linear actuator slightly closer to the crank pivot to increase usable braking resolution while retaining the existing hydraulic system.</strong></p>
+  <p>
+    Rather than redesigning the hydraulic system, the analytical model showed that a small change in actuator position would improve the linkage geometry, allowing hydraulic pressure to build earlier in the actuator stroke while maintaining the existing brake hardware.
+  </p>
+</div>
 
-Prior to my involvement, heat-generating components—particularly high-current solenoids—were packaged within a single enclosed electronics box, leading to overheating and intermittent system failures. My work focused on improving thermal management, component placement, and serviceability while maintaining protection in a high-vibration environment.
+## Concept Evaluation
 
-- Relocated heat-generating solenoids outside of the primary electronics enclosure to reduce internal thermal load
-- Refined internal component placement to improve airflow and thermal separation
-- Incorporated passive airflow paths to support convective cooling of remaining electronics
-- Maintained protection from vibration, debris, and incidental contact during on-track operation
-- Improved accessibility for inspection, debugging, and iterative testing
+The analytical model indicated that only a small change in actuator mounting location was required. Moving the actuator approximately one inch closer to the crank pivot and slightly higher improved the effective mechanical advantage early in the stroke while leaving the remainder of the brake hardware unchanged.
 
-The revised layout significantly reduced thermal stress on critical electrical components, improving system reliability and preventing recurrence of thermal shutdowns during autonomous operation.
+<figure class="project-figure project-figure--medium">
+  <img src="/images/go_kart/brake_linkage_design.jpg" alt="Brake linkage concept">
+  <figcaption>
+    Simplified concept illustration showing the design intent. The actual implementation retained the original linkage while repositioning only the actuator mounting location.
+  </figcaption>
+</figure>
+
+## Design Validation
+
+The updated actuator location was re-evaluated using the analytical model before fabrication. The revised geometry produced hydraulic pressure much earlier in the actuator stroke, creating a response much closer to a linear relationship between actuator displacement and brake output while maintaining the required braking performance.
+
+<figure class="project-figure project-figure--analysis">
+  <img src="/images/go_kart/brake_analysis_tool.jpg" alt="Updated brake analysis">
+  <figcaption>
+    Updated analytical model showing improved brake response after repositioning the actuator, providing increased usable braking resolution while maintaining clamp force and braking torque.
+  </figcaption>
+</figure>
+
+Developing the analytical model allowed actuator positions to be evaluated before modifying hardware. This reduced physical trial-and-error, provided quantitative justification for the final mounting location, and gave the controls team a significantly more predictable brake response for calibration.
+
+## Implemented Hardware
+
+The revised actuator mounting was fabricated and integrated into the autonomous race kart prior to track testing. Although the physical change consisted only of relocating the actuator mounting position, the completed system demonstrated approximately 25% less linkage free travel before brake engagement while retaining the existing hydraulic hardware.
+
+<figure class="project-figure project-figure--wide">
+  <img src="/images/go_kart/1750071649984.jpg" alt="Brake system installed on kart">
+  <figcaption>
+    Final actuator mounting integrated into Triton AI's autonomous race kart. A small change in actuator position produced a significant improvement in usable braking resolution without redesigning the brake hardware.
+  </figcaption>
+</figure>
+<div class="brake-results-grid">
+  <div class="brake-result-card">
+    <span class="brake-result-card__value">~25%</span>
+    <span class="brake-result-card__label">Reduction in linkage free travel</span>
+  </div>
+
+  <div class="brake-result-card">
+    <span class="brake-result-card__value">Earlier</span>
+    <span class="brake-result-card__label">Hydraulic pressure build-up</span>
+  </div>
+
+  <div class="brake-result-card">
+    <span class="brake-result-card__value">Unchanged</span>
+    <span class="brake-result-card__label">Existing hydraulic brake hardware</span>
+  </div>
+
+  <div class="brake-result-card">
+    <span class="brake-result-card__value">Python</span>
+    <span class="brake-result-card__label">Model-guided actuator repositioning</span>
+  </div>
+</div>
+
+## Battery Retention & Packaging
+
+The existing traction batteries were mounted in enclosures on the left and right side pods of the kart. Although this arrangement preserved the vehicle’s traditional layout, the batteries required more secure retention under vibration and dynamic track loading, and the enclosures needed better access for inspection and maintenance.
+
+I developed two packaging concepts to evaluate whether the existing architecture should be improved or replaced.
+
+### Concept 1 — Modified Side-Pod Enclosures
+
+The first concept retained the existing left and right-side enclosures while replacing the improvised retention arrangement with universal automotive-style battery mounts. Quick-release pins and hinges were also evaluated to improve access without requiring the enclosures to be completely removed.
+
+This approach offered several practical advantages:
+
+- Reused much of the existing enclosure architecture.
+- Required fewer changes to vehicle wiring and packaging.
+- Improved battery retention using commercially available hardware.
+- Preserved the kart’s existing appearance.
+- Reduced fabrication time and implementation risk.
+
+### Concept 2 — Center-Chassis Packaging
+
+The second concept relocated both batteries toward the seat region. Centralizing the batteries would reduce lateral center-of-gravity offset and allow their position to partially counterbalance the motor’s mass.
+
+However, this concept required a new enclosure and mounting structure, additional fabrication, possible wiring extensions, and further packaging development around the seat and rear chassis tubes. The available CAD also lacked sufficient detail to confirm every clearance before physical inspection.
+
+<div class="project-comparison">
+  <figure class="project-figure">
+    <img
+      src="{{ '/images/go_kart/wing_mount_battery_design.jpg' | relative_url }}"
+      alt="Side-pod battery concept using an automotive-style hold-down"
+      loading="lazy">
+    <figcaption>
+      <strong>Modified side-pod concept.</strong>
+      Retained the existing vehicle architecture while improving battery
+      retention and enclosure access.
+    </figcaption>
+  </figure>
+
+  <figure class="project-figure">
+    <img
+      src="{{ '/images/go_kart/center_battery_design.jpg' | relative_url }}"
+      alt="Center-chassis concept relocating the traction batteries behind the seat"
+      loading="lazy">
+    <figcaption>
+      <strong>Center-chassis concept.</strong>
+      Relocated the batteries toward the seat to centralize mass and partially
+      offset the motor’s lateral weight.
+    </figcaption>
+  </figure>
+</div>
+
+<div class="engineering-decision">
+  <p class="engineering-decision__label">Engineering Decision</p>
+  <p><strong>Retain the side-pod architecture and improve the battery-retention system.</strong></p>
+  <p>
+    Although the center-chassis concept offered potential mass-distribution benefits,
+    those benefits did not justify the additional cost, fabrication effort, packaging
+    uncertainty, and disruption to the existing vehicle architecture. The side-pod
+    solution addressed the immediate reliability problem while minimizing implementation
+    risk.
+  </p>
+</div>
+
+### Implemented Solution
+
+The final design retained the existing side-pod arrangement and added universal automotive-style hold-down hardware. This provided more secure battery retention under vibration and track loading while preserving the existing vehicle layout and avoiding unnecessary changes to the electrical system.
+
+The result was not the most aggressive packaging concept but the solution that best balanced reliability, cost, schedule, serviceability, and integration risk.
+
+## Electrical Housing Redesign
+
+The existing electronics enclosure had a recurring thermal failure mode. Heat-generating high-current solenoids were packaged inside a single enclosed box, leading to overheating and intermittent shutdowns.
+
+I redesigned the layout to:
+
+- relocate high-heat solenoids outside the primary enclosure
+- improve airflow and thermal separation
+- maintain debris and contact protection
+- improve inspection and debugging access
+- preserve compatibility with existing mounting interfaces
+
+> **Validation result:** The revised layout reduced thermal stress on the electrical hardware and prevented recurrence of the prior thermal shutdown behavior during autonomous operation.
+
+## Integration and Track Testing
+
+My mechanical integration work included:
+
+- sensor and compute mounts
+- wiring and hardware packaging
+- battery retention
+- electrical enclosure design
+- brake-system geometry
+- fabrication and assembly
+- serviceability improvements
+- track-test support
+
+Hardware was evaluated during repeated on-track sessions. Vibration-related issues, access problems, and packaging conflicts were documented and fed directly into revised designs.
 
 
-## Key Results
-- Delivered mechanically robust hardware supporting autonomous testing on track
-- Enabled reliable sensor and compute mounting under vibration and shock loads
-- Improved serviceability and iteration speed during active testing cycles
-- Supported autonomy development through dependable mechanical integration
+## Systems Engineering Perspective
 
-
+This project reinforced that autonomous vehicle performance depends on far more than perception and controls software. Mechanical packaging, thermal management, serviceability, and subsystem integration directly determine how much productive testing a team can accomplish. Designing reliable hardware not only improves vehicle performance—it enables the software team to collect more data, iterate faster, and spend more time improving autonomy instead of repairing the vehicle.

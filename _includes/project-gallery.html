@@ -1,0 +1,23 @@
+<section class="project-gallery">
+  <div class="project-section-heading">
+    <p class="project-kicker">Project Gallery</p>
+    <h2>Design, fabrication, and testing</h2>
+  </div>
+
+  <div class="project-gallery__grid">
+    {% for item in page.gallery %}
+      <figure class="project-gallery__item{% if item.wide %} project-gallery__item--wide{% endif %}">
+        <img
+          src="{{ item.image | relative_url }}"
+          alt="{{ item.alt | escape }}"
+          loading="lazy">
+        {% if item.title or item.caption %}
+          <figcaption>
+            {% if item.title %}<strong>{{ item.title }}</strong>{% endif %}
+            {% if item.caption %}<span>{{ item.caption }}</span>{% endif %}
+          </figcaption>
+        {% endif %}
+      </figure>
+    {% endfor %}
+  </div>
+</section>

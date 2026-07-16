@@ -1,0 +1,23 @@
+{% if page.previous_project or page.next_project %}
+<nav class="project-navigation" aria-label="More projects">
+  <div class="project-navigation__inner">
+    {% if page.previous_project %}
+      <a class="project-navigation__item" href="{{ page.previous_project.url | relative_url }}">
+        <span>Previous Project</span>
+        <strong>← {{ page.previous_project.title }}</strong>
+      </a>
+    {% else %}
+      <span></span>
+    {% endif %}
+
+    <a class="project-navigation__all" href="{{ '/#featured' | relative_url }}">All Projects</a>
+
+    {% if page.next_project %}
+      <a class="project-navigation__item project-navigation__item--next" href="{{ page.next_project.url | relative_url }}">
+        <span>Next Project</span>
+        <strong>{{ page.next_project.title }} →</strong>
+      </a>
+    {% endif %}
+  </div>
+</nav>
+{% endif %}

@@ -1,0 +1,47 @@
+<header class="project-hero">
+  {% if page.hero_image %}
+    <div
+      class="project-hero__media"
+      style="background-image: url('{{ page.hero_image | relative_url }}');"
+      aria-hidden="true">
+    </div>
+  {% endif %}
+
+  <div class="project-hero__scrim" aria-hidden="true"></div>
+
+  <div class="project-hero__content">
+    {% if page.project_type %}
+      <p class="project-kicker">{{ page.project_type }}</p>
+    {% endif %}
+
+    <h1>{{ page.title }}</h1>
+
+    {% if page.subtitle %}
+      <p class="project-hero__subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+
+    {% if page.hero_summary %}
+      <p class="project-hero__summary">{{ page.hero_summary }}</p>
+    {% endif %}
+    
+    {% if page.project_links %}
+      <div class="project-actions">
+        {% for link in page.project_links %}
+          <a
+            class="project-button{% if link.primary %} project-button--primary{% endif %}"
+            href="{{ link.url | relative_url }}"
+            {% if link.external %}
+              target="_blank" rel="noopener noreferrer"
+            {% endif %}>
+            {{ link.label }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <a class="project-hero__scroll" href="#project-content">
+    Explore the case study
+    <span aria-hidden="true">↓</span>
+  </a>
+</header>

@@ -1,0 +1,97 @@
+---
+layout: default
+---
+
+<style>
+  .masthead {
+    display: none !important;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .initial-content,
+  #main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+</style>
+
+<article class="project-case-study">
+  {% include project-hero.html %}
+
+  <main class="project-main" id="project-content">
+
+    <section class="project-intro">
+      <div class="project-intro__copy">
+        <p class="project-kicker">The Project</p>
+        {% if page.intro_title %}
+          <h2>{{ page.intro_title }}</h2>
+        {% endif %}
+        {% if page.intro %}
+          <p class="project-intro__lead">{{ page.intro }}</p>
+        {% endif %}
+      </div>
+
+      <aside class="project-intro__facts">
+        {% include quick-facts.html %}
+      </aside>
+    </section>
+
+    {% if page.process %}
+      {% include project-process.html %}
+    {% endif %}
+
+    {% if page.results %}
+      <section class="project-results">
+        <div class="project-section-heading">
+          <p class="project-kicker">Project Outcome</p>
+          <h2>{{ page.results_heading | default: "Validated through build and testing" }}</h2>
+        </div>
+
+        <div class="project-results__grid">
+          {% for item in page.results %}
+            <article class="project-result">
+              {% if item.value %}
+                <strong>{{ item.value }}</strong>
+              {% endif %}
+              <span>{{ item.label }}</span>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if page.lead_image %}
+      <figure class="project-feature-image">
+        <img
+          src="{{ page.lead_image.image | relative_url }}"
+          alt="{{ page.lead_image.alt | escape }}"
+          loading="eager">
+        {% if page.lead_image.caption %}
+          <figcaption>{{ page.lead_image.caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
+
+    <div class="project-story">
+      {{ content }}
+    </div>
+
+    {% if page.documents %}
+      {% include project-documents.html %}
+    {% endif %}
+
+    {% if page.gallery %}
+      {% include project-gallery.html %}
+    {% endif %}
+
+  </main>
+
+  {% include project-navigation.html %}
+</article>
