@@ -8,6 +8,7 @@ permalink: /racecar/
 
 project_type: "Autonomous Systems · Sensor Packaging"
 hero_image: /images/1_10th_racecar/01_Jack_Robot_v6.jpg
+hero_mobile_fit: contain
 hero_summary: >-
   Final CAD architecture integrating dual lidar, camera, compute, and GPS
   hardware within a protected, serviceable racecar package compatible with

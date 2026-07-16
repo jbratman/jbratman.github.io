@@ -8,6 +8,7 @@ permalink: /openSauce/
 
 project_type: "Robotics · Public Demonstration"
 hero_image: /images/openSauce/AWS_Chassis_Electrical_Mounting_Plate.jpg
+hero_mobile_fit: contain
 hero_summary: >-
   Designed, integrated, and operated a sub-$500 autonomous RC racecar capable
   of repeatable lane following inside a transportable 16 ft × 16 ft exhibit.

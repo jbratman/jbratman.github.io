@@ -8,6 +8,7 @@ permalink: /aerodynamic_analysis/
 
 project_type: "Engineering Analysis · Aerodynamics and Structures"
 hero_image: /images/aero_analysis_project/Baseline Flow.jpg
+hero_mobile_fit: contain
 hero_summary: >-
   Used SolidWorks Flow Simulation and finite element analysis to compare
   conventional under-wing and swan-neck stanchions across three material systems.
