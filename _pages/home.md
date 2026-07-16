@@ -17,13 +17,6 @@ permalink: /
     </nav>
 
     <header class="landing-hero" id="top">
-      <div class="hero-background" aria-hidden="true">
-        <img
-          src="{{ '/images/Jeff_aircraft_composite_v3.jpg' | relative_url }}"
-          alt=""
-        >
-      </div>
-
       <div class="landing-hero__copy">
         <p class="landing-kicker">Jeff Bratman · Aerospace Engineer</p>
 
@@ -41,6 +34,13 @@ permalink: /
           <a class="concept-button" href="#featured">Explore my work</a>
           <a class="concept-button concept-button--ghost" href="mailto:bratman.jeff@gmail.com">Contact me</a>
         </div>
+      </div>
+
+      <div class="hero-background" aria-hidden="true">
+        <img
+          src="{{ '/images/Jeff_aircraft_composite_v3.jpg' | relative_url }}"
+          alt=""
+        >
       </div>
     </header>
 
@@ -260,6 +260,32 @@ permalink: /
     activeIndex = wrappedIndex(activeIndex + 1);
     updateCarousel();
   });
+
+  let swipeStartX = 0;
+  let swipeStartY = 0;
+  let swipeTracking = false;
+  const rail = document.querySelector('#projectRail');
+
+  rail?.addEventListener('touchstart', event => {
+    const touch = event.changedTouches[0];
+    swipeStartX = touch.clientX;
+    swipeStartY = touch.clientY;
+    swipeTracking = true;
+  }, { passive: true });
+
+  rail?.addEventListener('touchend', event => {
+    if (!swipeTracking) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - swipeStartX;
+    const deltaY = touch.clientY - swipeStartY;
+    swipeTracking = false;
+
+    if (Math.abs(deltaX) < 45 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+    activeIndex = wrappedIndex(activeIndex + (deltaX < 0 ? 1 : -1));
+    updateCarousel();
+  }, { passive: true });
 
   document.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft') left?.click();
