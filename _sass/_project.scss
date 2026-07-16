@@ -64,7 +64,7 @@
   transform: scale(1.015);
 }
 
-.project-hero__mobile-image {
+.project-hero__media .project-hero__mobile-image {
   display: none;
 }
 
@@ -584,7 +584,7 @@
     transform: none;
   }
 
-  .project-hero__mobile-image {
+  .project-hero__media .project-hero__mobile-image {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
