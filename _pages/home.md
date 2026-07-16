@@ -1,5 +1,5 @@
 ---
-layout: concept-home
+layout: home
 title: "Jeff Bratman | Engineering Portfolio"
 permalink: /
 ---
